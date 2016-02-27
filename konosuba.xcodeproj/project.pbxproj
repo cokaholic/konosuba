@@ -18,6 +18,10 @@
 		9F20D87C1C81632900A41B90 /* KSBStepperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F20D87B1C81632900A41B90 /* KSBStepperViewController.m */; };
 		9F20D8871C8163CF00A41B90 /* StepperView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F20D8861C8163CF00A41B90 /* StepperView.m */; };
 		9F20D88C1C8165E800A41B90 /* Const.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F20D88A1C8165E800A41B90 /* Const.m */; };
+		9F20D8921C819CCB00A41B90 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F20D8911C819CCA00A41B90 /* MediaPlayer.framework */; };
+		9F20D8941C819CD500A41B90 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F20D8931C819CD500A41B90 /* AssetsLibrary.framework */; };
+		9F20D8961C819CE300A41B90 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F20D8951C819CE300A41B90 /* AVFoundation.framework */; };
+		9F20D89A1C81CE3000A41B90 /* KSBAVAssetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F20D8991C81CE3000A41B90 /* KSBAVAssetManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +69,11 @@
 		9F20D88A1C8165E800A41B90 /* Const.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Const.m; sourceTree = "<group>"; };
 		9F20D88B1C8165E800A41B90 /* Macro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
 		9F20D88D1C8166AA00A41B90 /* konosuba-PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "konosuba-PrefixHeader.pch"; sourceTree = "<group>"; };
+		9F20D8911C819CCA00A41B90 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		9F20D8931C819CD500A41B90 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		9F20D8951C819CE300A41B90 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		9F20D8981C81CE3000A41B90 /* KSBAVAssetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSBAVAssetManager.h; sourceTree = "<group>"; };
+		9F20D8991C81CE3000A41B90 /* KSBAVAssetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSBAVAssetManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +81,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F20D8961C819CE300A41B90 /* AVFoundation.framework in Frameworks */,
+				9F20D8941C819CD500A41B90 /* AssetsLibrary.framework in Frameworks */,
+				9F20D8921C819CCB00A41B90 /* MediaPlayer.framework in Frameworks */,
 				5EE7D55811B3CAD6817EB1DC /* libPods-konosuba.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -96,6 +108,9 @@
 		7F763701D5E294E2B197619E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9F20D8951C819CE300A41B90 /* AVFoundation.framework */,
+				9F20D8931C819CD500A41B90 /* AssetsLibrary.framework */,
+				9F20D8911C819CCA00A41B90 /* MediaPlayer.framework */,
 				5922D0003778E3012EB389C5 /* libPods-konosuba.a */,
 			);
 			name = Frameworks;
@@ -213,6 +228,7 @@
 		9F20D8821C81639500A41B90 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				9F20D8971C81CE1700A41B90 /* KSBAVAssetManager */,
 			);
 			name = Manager;
 			sourceTree = "<group>";
@@ -235,6 +251,15 @@
 				9F20D88B1C8165E800A41B90 /* Macro.h */,
 			);
 			name = Const;
+			sourceTree = "<group>";
+		};
+		9F20D8971C81CE1700A41B90 /* KSBAVAssetManager */ = {
+			isa = PBXGroup;
+			children = (
+				9F20D8981C81CE3000A41B90 /* KSBAVAssetManager.h */,
+				9F20D8991C81CE3000A41B90 /* KSBAVAssetManager.m */,
+			);
+			name = KSBAVAssetManager;
 			sourceTree = "<group>";
 		};
 		F55F1BA17371D8C6E3FBEC14 /* Pods */ = {
@@ -427,6 +452,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F20D8491C8144A900A41B90 /* AppDelegate.m in Sources */,
+				9F20D89A1C81CE3000A41B90 /* KSBAVAssetManager.m in Sources */,
 				9F20D8871C8163CF00A41B90 /* StepperView.m in Sources */,
 				9F20D8461C8144A900A41B90 /* main.m in Sources */,
 				9F20D88C1C8165E800A41B90 /* Const.m in Sources */,
@@ -498,6 +524,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -542,6 +569,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
