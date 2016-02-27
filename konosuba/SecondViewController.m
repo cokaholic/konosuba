@@ -32,10 +32,6 @@
     
     [self.headerStepperView setStepWithNumber:2];
     
-    // 画面遷移
-    KSBBgmSettingViewController *bsvc = [[KSBBgmSettingViewController alloc] init];
-    [self.navigationController pushViewController:bsvc animated:YES];
-    
     processors = @[[[ImageProcessor alloc]initWithImageNamed:@"frame01.png"],
                     [[ImageProcessor alloc]initWithImageNamed:@"frame02.png"],
                     [[ImageProcessor alloc]initWithImageNamed:@"frame03.png"],
