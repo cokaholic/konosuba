@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5EE7D55811B3CAD6817EB1DC /* libPods-konosuba.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5922D0003778E3012EB389C5 /* libPods-konosuba.a */; };
+		705EDEF41C8171CF0021DD71 /* GIBgmSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 705EDEF31C8171CF0021DD71 /* GIBgmSettingViewController.m */; };
 		9F20D8461C8144A900A41B90 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F20D8451C8144A900A41B90 /* main.m */; };
 		9F20D8491C8144A900A41B90 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F20D8481C8144A900A41B90 /* AppDelegate.m */; };
 		9F20D8511C8144A900A41B90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F20D8501C8144A900A41B90 /* Assets.xcassets */; };
@@ -40,6 +41,8 @@
 /* Begin PBXFileReference section */
 		19DA7BBBBB62BFE64D2F9259 /* Pods-konosuba.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-konosuba.debug.xcconfig"; path = "Pods/Target Support Files/Pods-konosuba/Pods-konosuba.debug.xcconfig"; sourceTree = "<group>"; };
 		5922D0003778E3012EB389C5 /* libPods-konosuba.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-konosuba.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		705EDEF21C8171CF0021DD71 /* GIBgmSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GIBgmSettingViewController.h; sourceTree = "<group>"; };
+		705EDEF31C8171CF0021DD71 /* GIBgmSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GIBgmSettingViewController.m; sourceTree = "<group>"; };
 		9BF021385222574E677ECF36 /* Pods-konosuba.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-konosuba.release.xcconfig"; path = "Pods/Target Support Files/Pods-konosuba/Pods-konosuba.release.xcconfig"; sourceTree = "<group>"; };
 		9F20D8411C8144A900A41B90 /* konosuba.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = konosuba.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F20D8451C8144A900A41B90 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -93,6 +96,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		705EDEF11C8170B00021DD71 /* GIBgmSettingViewController */ = {
+			isa = PBXGroup;
+			children = (
+				705EDEF21C8171CF0021DD71 /* GIBgmSettingViewController.h */,
+				705EDEF31C8171CF0021DD71 /* GIBgmSettingViewController.m */,
+			);
+			name = GIBgmSettingViewController;
+			sourceTree = "<group>";
+		};
 		7F763701D5E294E2B197619E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +183,7 @@
 		9F20D87D1C81635100A41B90 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				705EDEF11C8170B00021DD71 /* GIBgmSettingViewController */,
 				9F20D87F1C81636A00A41B90 /* KSBTopViewController */,
 				9F20D87E1C81635E00A41B90 /* KSBStepperViewController */,
 			);
@@ -430,6 +443,7 @@
 				9F20D8871C8163CF00A41B90 /* StepperView.m in Sources */,
 				9F20D8461C8144A900A41B90 /* main.m in Sources */,
 				9F20D88C1C8165E800A41B90 /* Const.m in Sources */,
+				705EDEF41C8171CF0021DD71 /* GIBgmSettingViewController.m in Sources */,
 				9F20D8791C8144C600A41B90 /* KSBTopViewController.m in Sources */,
 				9F20D87C1C81632900A41B90 /* KSBStepperViewController.m in Sources */,
 			);
