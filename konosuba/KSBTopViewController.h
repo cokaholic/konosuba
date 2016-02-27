@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  KSBTopViewController.h
 //  konosuba
 //
 //  Created by Keisuke_Tatsumi on 2016/02/27.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface KSBTopViewController : UIViewController
 
 @end
-
