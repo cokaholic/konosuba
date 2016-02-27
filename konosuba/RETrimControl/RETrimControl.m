@@ -212,8 +212,14 @@
         [self notifyDelegate];
     }
 
-    if (gesture.state == UIGestureRecognizerStateEnded)
+    if (gesture.state == UIGestureRecognizerStateEnded) {
         [self hidePopover:_popoverViewLong];
+        
+        if ([self.delegate respondsToSelector:@selector(trimControlDidEndPanScroll:)]) {
+            [self.delegate trimControlDidEndPanScroll:self];
+        }
+    }
+    
 }
 
 - (void)handleLeftPan:(UIPanGestureRecognizer *)gesture
@@ -224,7 +230,7 @@
         CGFloat availableWidth = self.frame.size.width - RANGESLIDER_THUMB_SIZE;
         _leftValue += translation.x / availableWidth * range;
         if (_leftValue < 0) _leftValue = 0;
-        if (_rightValue - _leftValue < 10) _leftValue = _rightValue - 9;
+        if (_rightValue - _leftValue < 1) _leftValue = _rightValue - 1;
 
         [gesture setTranslation:CGPointZero inView:self];
 
@@ -240,8 +246,12 @@
         [self notifyDelegate];
     }
 
-    if (gesture.state == UIGestureRecognizerStateEnded)
+    if (gesture.state == UIGestureRecognizerStateEnded) {
         [self hidePopover:_leftPopover];
+        if ([self.delegate respondsToSelector:@selector(trimControlDidEndPanScroll:)]) {
+            [self.delegate trimControlDidEndPanScroll:self];
+        }
+    }
 }
 
 - (void)handleRightPan:(UIPanGestureRecognizer *)gesture
@@ -253,7 +263,7 @@
         _rightValue += translation.x / availableWidth * range;
 
         if (_rightValue > 100) _rightValue = 100;
-        if (_rightValue - _leftValue < 10) _rightValue = _leftValue + 9;
+        if (_rightValue - _leftValue < 1) _rightValue = _leftValue + 1;
 
         [gesture setTranslation:CGPointZero inView:self];
 
@@ -269,8 +279,12 @@
         [self notifyDelegate];
     }
 
-    if (gesture.state == UIGestureRecognizerStateEnded)
+    if (gesture.state == UIGestureRecognizerStateEnded) {
         [self hidePopover:_rightPopover];
+        if ([self.delegate respondsToSelector:@selector(trimControlDidEndPanScroll:)]) {
+            [self.delegate trimControlDidEndPanScroll:self];
+        }
+    }
 }
 
 #pragma mark -
@@ -280,8 +294,8 @@
 {
     NSInteger minutes = floor(time / 60);
     NSInteger seconds = time - minutes * 60;
-    NSString *minutesStr = [NSString stringWithFormat:minutes >= 10 ? @"%i" : @"0%i", minutes];
-    NSString *secondsStr = [NSString stringWithFormat:seconds >= 10 ? @"%i" : @"0%i", seconds];
+    NSString *minutesStr = [NSString stringWithFormat:minutes >= 10 ? @"%li" : @"0%li", (long)minutes];
+    NSString *secondsStr = [NSString stringWithFormat:seconds >= 10 ? @"%li" : @"0%li", (long)seconds];
     return [NSString stringWithFormat:@"%@:%@", minutesStr, secondsStr];
 }
 
