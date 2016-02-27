@@ -1,0 +1,16 @@
+PODS:
+  - UIColor+Hex (1.0.1):
+    - UIColor+Hex/NSColor (= 1.0.1)
+    - UIColor+Hex/UIColor (= 1.0.1)
+  - UIColor+Hex/UIColor (1.0.1)
+  - ViewUtils (1.1.2)
+
+DEPENDENCIES:
+  - UIColor+Hex
+  - ViewUtils
+
+SPEC CHECKSUMS:
+  UIColor+Hex: 9fee91bb8e19f17dd40a79ae1e98949a6a84489d
+  ViewUtils: 68e42c708a4b3912e39691cef5080282dc5013fb
+
+COCOAPODS: 0.39.0

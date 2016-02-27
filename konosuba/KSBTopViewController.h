@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KSBStepperViewController.h"
 
-@interface KSBTopViewController : UIViewController
+@interface KSBTopViewController : KSBStepperViewController
 
 @end

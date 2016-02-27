@@ -10,4 +10,14 @@
 
 @implementation KSBTopViewController
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [self.headerStepperView setStepWithNumber:1];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+}
+
 @end
