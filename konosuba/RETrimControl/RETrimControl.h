@@ -56,6 +56,7 @@
 @property (strong, readwrite, nonatomic) UIColor *textColor;
 @property (strong, readwrite, nonatomic) UIColor *textBackgroundColor;
 @property (assign, readwrite, nonatomic) NSInteger textVerticalOffset;
+@property (assign, readwrite, nonatomic) Float64 maxDuration;
 
 - (id)initWithFrame:(CGRect)frame resourceBundle:(NSString *)resourceBundle;
 
@@ -64,5 +65,8 @@
 @protocol RETrimControlDelegate <NSObject>
 
 - (void)trimControl:(RETrimControl *)trimControl didChangeLeftValue:(CGFloat)leftValue rightValue:(CGFloat)rightValue;
+
+@optional
+- (void)trimControlDidEndPanScroll:(RETrimControl *)trimControl;
 
 @end

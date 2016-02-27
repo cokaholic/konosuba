@@ -33,6 +33,8 @@ static NSString * const kCellIdentifier = @"Cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.backgroundColor = [UIColor whiteColor];
+    
     [self.headerStepperView setStepWithNumber:3];
     
     [self configFiles];
@@ -84,14 +86,14 @@ static NSString * const kCellIdentifier = @"Cell";
     _titleLabel.textColor = [UIColor blackColor];
     _titleLabel.textAlignment = NSTextAlignmentCenter;
     _titleLabel.font = DEFAULT_FONT_BOLD(20);
-    _titleLabel.text = @"BGMの設定";
+    _titleLabel.text = @"BGMの選択";
     [self.view addSubview:_titleLabel];
 }
 
 - (void)configAddButton {
     
     _addButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    _addButton.frame = CGRectMake(0, _titleLabel.bottom, _titleLabel.width, 40);
+    _addButton.frame = CGRectMake(kDefaultMargin, _titleLabel.bottom, _titleLabel.width - kDefaultMargin*2, 40);
     _addButton.backgroundColor = [UIColor greenColor];
     [_addButton setTitle:@"ライブラリから追加する" forState:UIControlStateNormal];
     _addButton.tintColor = [UIColor colorWithCSS:kColorCodeWhite];
