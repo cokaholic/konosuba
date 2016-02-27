@@ -8,6 +8,7 @@
 
 #import "KSBBgmSettingViewController.h"
 #import "KSBBgmSettingView.h"
+#import "KSBConvertViewController.h"
 
 @interface KSBBgmSettingViewController ()
 
@@ -22,6 +23,10 @@
     [self.headerStepperView setStepWithNumber:3];
     
     [self configBgmSettingView];
+    
+    // debug用に画面遷移
+    KSBConvertViewController *cvc = [[KSBConvertViewController alloc] init];
+    [self.navigationController pushViewController:cvc animated:YES];
 }
 
 - (void)configBgmSettingView {

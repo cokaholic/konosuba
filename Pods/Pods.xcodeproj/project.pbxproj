@@ -7,147 +7,186 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1E2DFAD8C7117B332AB52C44964E9E9F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		2B05CE37DC4B9AEDC82360033D317BB2 /* UIColor+Hex-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 97F06F8A810D3A0DF4C8D96C7028D1DA /* UIColor+Hex-dummy.m */; };
-		2FF5F9F0594F49B0EBD6B303BF0560DF /* ViewUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 856DB42CF03EAD07A736CAD193BFF6A2 /* ViewUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5536F80C2C6F427FC97951B8C7093512 /* UIColor+Hex.h in Headers */ = {isa = PBXBuildFile; fileRef = F99A7DEC0B2FE7E123AC7F97A307BAB9 /* UIColor+Hex.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9610BE7BE32FCD0B2F491FB5BEE4C002 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 222BF6D4ACCCD3286A1B1479585C28AB /* UIColor+Hex.m */; };
-		962398C2D0E7B71ACF49C0348014865F /* ViewUtils-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A599155C45BAAFD92FEF6E99EB3D33 /* ViewUtils-dummy.m */; };
-		B93512F1E1A5B80B3E773704F1E36F05 /* Pods-konosuba-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E5E56D6CDE2E11C39BDBAAF2ED9F51 /* Pods-konosuba-dummy.m */; };
-		C5219690529B5284288EF65A25AF5AA1 /* ViewUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB03A7E1E5E6A1A2C35A70753E5A67F /* ViewUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		EDF79BE10A9EDFEBBC4A5E75915AA6A5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		F6DD555A8549491DF52743AB0A92AA8A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		060B863FD97DBB9D799E20306E6C9A29 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E9563A2950797DDD8E882EC4E356B40 /* SVIndefiniteAnimatedView.m */; };
+		20A36BD4B7F2777764C0D071BD4BC81C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 258B0C8029B3982F03A30ED9FB271283 /* Foundation.framework */; };
+		220C1642CA41B5F12DF52B7A5F55897B /* Pods-konosuba-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E5E56D6CDE2E11C39BDBAAF2ED9F51 /* Pods-konosuba-dummy.m */; };
+		2E0A3CC304AA2B939B7E743504A21E1E /* UIColor+Hex.h in Headers */ = {isa = PBXBuildFile; fileRef = ED207061EC25C631D0FABBE2BD0768F6 /* UIColor+Hex.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3668D36B2253A07B94A7CF6B2793745E /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ED8C73088C2C16C046F64D273CA6BD4 /* SVProgressHUD.m */; };
+		7DAEDCAF4858AECF5A86E569C65ED023 /* SVProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C6D69BC22EEAC21CDFA87E322DA636D6 /* SVProgressHUD-dummy.m */; };
+		8918061931F3D56C39DA2E266A60B948 /* ViewUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DFCFC68AA478BC2A731843D67FBE8B5 /* ViewUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8B2C7A08C7B1772D506BDEFF7915DD26 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 258B0C8029B3982F03A30ED9FB271283 /* Foundation.framework */; };
+		923EC08F512709936F7AD910E7A92642 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 258B0C8029B3982F03A30ED9FB271283 /* Foundation.framework */; };
+		9F11403527B2028CD13E8B3C33968DE0 /* ViewUtils-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3CA335542717F95046BA84D9D817D2 /* ViewUtils-dummy.m */; };
+		BE9E180104B909508FC61DEB2772DEC0 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E31EEBB7EF70BA0B81EC67A09B986 /* UIColor+Hex.m */; };
+		C9F0271DA986FAEF9065DC48DD395E21 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 258B0C8029B3982F03A30ED9FB271283 /* Foundation.framework */; };
+		D586FD3B31456FAE9BA51B09D218E057 /* SVIndefiniteAnimatedView.h in Headers */ = {isa = PBXBuildFile; fileRef = C2A0F35DA9C35A8D55DBFE92153866F2 /* SVIndefiniteAnimatedView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D99A0B07D37FC10038CE4C0430EA885B /* UIColor+Hex-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DF207CCDB32446FBEDF05B280A2637BF /* UIColor+Hex-dummy.m */; };
+		E225652A80673817C9F80799489D08B7 /* SVProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = 94A618D9C67F14778717F46F8DB6BED4 /* SVProgressHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E8CC36F023593D4D387C1C4C1E78CDF6 /* ViewUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A7B33E85683E66FB2171A04E9738D53 /* ViewUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FDB7CD0E38EAA4A9510541378FB58F74 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B18F24645AA4D651DFC7B69A3A0833DB /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		5702B604E6A2097C5FA799E467F17367 /* PBXContainerItemProxy */ = {
+		59BECFDD92363F9D9B6C3F8FFE3FC7DF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = EFC5BD5F58684AA476540F60F785FE33;
+			remoteGlobalIDString = 708689590E6A7CFCCC3749FB8E016CCC;
 			remoteInfo = ViewUtils;
 		};
-		ACF5491E2C069CA61FC27159C6F3A8B8 /* PBXContainerItemProxy */ = {
+		BA3F21AAC533B9F54753C1944F7B6259 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 184DD92B5516091560073F494171F6FE;
+			remoteGlobalIDString = DAEC51BE7BBB898A862E1B71764A4894;
 			remoteInfo = "UIColor+Hex";
+		};
+		D26EA592CA0DA68AB5CFF0EAB4336416 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D685FFBBE45A4B7AF893456979BB7991;
+			remoteInfo = SVProgressHUD;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		113ED51D19EFBD1D313CD0C9D1AA622E /* ViewUtils-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ViewUtils-prefix.pch"; sourceTree = "<group>"; };
-		222BF6D4ACCCD3286A1B1479585C28AB /* UIColor+Hex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+Hex.m"; path = "UIColor/UIColor+Hex.m"; sourceTree = "<group>"; };
-		28A599155C45BAAFD92FEF6E99EB3D33 /* ViewUtils-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ViewUtils-dummy.m"; sourceTree = "<group>"; };
-		34D79F6D8435F05AD9F4D9385E4A6F78 /* ViewUtils.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ViewUtils.xcconfig; sourceTree = "<group>"; };
-		3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		42FF14F287075C415192AD2B21A997A9 /* libPods-konosuba.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-konosuba.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A7B33E85683E66FB2171A04E9738D53 /* ViewUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ViewUtils.m; path = ViewUtils/ViewUtils.m; sourceTree = "<group>"; };
+		1DFCFC68AA478BC2A731843D67FBE8B5 /* ViewUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ViewUtils.h; path = ViewUtils/ViewUtils.h; sourceTree = "<group>"; };
+		1E9563A2950797DDD8E882EC4E356B40 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVIndefiniteAnimatedView.m; path = SVProgressHUD/SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		2475AF33B691CF1CDDDC75CCCB3C1C7C /* libViewUtils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libViewUtils.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		258B0C8029B3982F03A30ED9FB271283 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		38CB61DCC3EEDE13AE5BC80C7BB7FA8C /* UIColor+Hex-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex-prefix.pch"; sourceTree = "<group>"; };
 		433DAE03DC244CCBE17D6C78D311AE15 /* Pods-konosuba-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-konosuba-frameworks.sh"; sourceTree = "<group>"; };
 		4B743DB40605FE6FAC07A4644EA6E6F0 /* Pods-konosuba.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-konosuba.release.xcconfig"; sourceTree = "<group>"; };
 		500406FF9A6FDF8DCB529C25CF9EAF15 /* Pods-konosuba-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-konosuba-acknowledgements.plist"; sourceTree = "<group>"; };
 		72E5E56D6CDE2E11C39BDBAAF2ED9F51 /* Pods-konosuba-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-konosuba-dummy.m"; sourceTree = "<group>"; };
 		77FA878628858A95E228DCAA918C3151 /* Pods-konosuba-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-konosuba-resources.sh"; sourceTree = "<group>"; };
-		856DB42CF03EAD07A736CAD193BFF6A2 /* ViewUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ViewUtils.h; path = ViewUtils/ViewUtils.h; sourceTree = "<group>"; };
-		97F06F8A810D3A0DF4C8D96C7028D1DA /* UIColor+Hex-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex-dummy.m"; sourceTree = "<group>"; };
+		8009AC9DD420A5AE7C0888E06A857AB1 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = SVProgressHUD.bundle; path = SVProgressHUD/SVProgressHUD.bundle; sourceTree = "<group>"; };
+		8D3E31EEBB7EF70BA0B81EC67A09B986 /* UIColor+Hex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+Hex.m"; path = "UIColor/UIColor+Hex.m"; sourceTree = "<group>"; };
+		94A618D9C67F14778717F46F8DB6BED4 /* SVProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVProgressHUD.h; path = SVProgressHUD/SVProgressHUD.h; sourceTree = "<group>"; };
 		9C3D139FEC9B2B810F872144537708D3 /* Pods-konosuba-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-konosuba-acknowledgements.markdown"; sourceTree = "<group>"; };
+		9ED8C73088C2C16C046F64D273CA6BD4 /* SVProgressHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVProgressHUD.m; path = SVProgressHUD/SVProgressHUD.m; sourceTree = "<group>"; };
+		A5AFCE3C7748A36BEB58F4CD90858DCB /* ViewUtils.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ViewUtils.xcconfig; sourceTree = "<group>"; };
+		B18F24645AA4D651DFC7B69A3A0833DB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BD771365C70428620ADF84995B5D9469 /* Pods-konosuba.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-konosuba.debug.xcconfig"; sourceTree = "<group>"; };
-		E0A21A6E0CF335C27886B339BB1FC893 /* libViewUtils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libViewUtils.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		E129D4093721404BDAB5104A872FA388 /* libUIColor+Hex.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libUIColor+Hex.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E36E4130527E3AFC41B221390A9A6E80 /* UIColor+Hex.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "UIColor+Hex.xcconfig"; sourceTree = "<group>"; };
-		E96F78B605B083F85BDBE96CC84855AF /* UIColor+Hex-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex-prefix.pch"; sourceTree = "<group>"; };
-		F99A7DEC0B2FE7E123AC7F97A307BAB9 /* UIColor+Hex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+Hex.h"; path = "UIColor/UIColor+Hex.h"; sourceTree = "<group>"; };
-		FFB03A7E1E5E6A1A2C35A70753E5A67F /* ViewUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ViewUtils.m; path = ViewUtils/ViewUtils.m; sourceTree = "<group>"; };
+		C2A0F35DA9C35A8D55DBFE92153866F2 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVIndefiniteAnimatedView.h; path = SVProgressHUD/SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		C6D69BC22EEAC21CDFA87E322DA636D6 /* SVProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SVProgressHUD-dummy.m"; sourceTree = "<group>"; };
+		CBF17449F6C0B6CBD30061D9B42345A9 /* libUIColor+Hex.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libUIColor+Hex.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D772687404B0E985C8CCCCDEFC096B40 /* SVProgressHUD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SVProgressHUD.xcconfig; sourceTree = "<group>"; };
+		DD8273100EE9401D2C9F99C66C2DD18F /* ViewUtils-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ViewUtils-prefix.pch"; sourceTree = "<group>"; };
+		DE3CA335542717F95046BA84D9D817D2 /* ViewUtils-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ViewUtils-dummy.m"; sourceTree = "<group>"; };
+		DF207CCDB32446FBEDF05B280A2637BF /* UIColor+Hex-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex-dummy.m"; sourceTree = "<group>"; };
+		E649783D4246E5CC3C5BD01F09129689 /* libPods-konosuba.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-konosuba.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED207061EC25C631D0FABBE2BD0768F6 /* UIColor+Hex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+Hex.h"; path = "UIColor/UIColor+Hex.h"; sourceTree = "<group>"; };
+		F06FFE335944F52EA439C46A9369BEEE /* UIColor+Hex.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "UIColor+Hex.xcconfig"; sourceTree = "<group>"; };
+		F11A9EA6B6E91E39A19624B50BE4E94B /* SVProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-prefix.pch"; sourceTree = "<group>"; };
+		F65BF5CCF7C8AB3AAD63078087EC8631 /* libSVProgressHUD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSVProgressHUD.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0C87936EB3A3034A11CBA054CC710A36 /* Frameworks */ = {
+		AD96DF2AC552BBE9EA7EB8BD15C4F106 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E2DFAD8C7117B332AB52C44964E9E9F /* Foundation.framework in Frameworks */,
+				923EC08F512709936F7AD910E7A92642 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B1E6B8591B926B97828241419A315D89 /* Frameworks */ = {
+		CAD2EBD8AEA29655DCD14F2460FCBFDE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6DD555A8549491DF52743AB0A92AA8A /* Foundation.framework in Frameworks */,
+				20A36BD4B7F2777764C0D071BD4BC81C /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C316966CB4081701FA119832F8140FCA /* Frameworks */ = {
+		DB0234D9DAAEFCEDECFA764AB28ECDA4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDF79BE10A9EDFEBBC4A5E75915AA6A5 /* Foundation.framework in Frameworks */,
+				C9F0271DA986FAEF9065DC48DD395E21 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E26C009A9C651D0C7699C46CFF297BDB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B2C7A08C7B1772D506BDEFF7915DD26 /* Foundation.framework in Frameworks */,
+				FDB7CD0E38EAA4A9510541378FB58F74 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2ACF88D1579B3C218EAF57F69044682F /* Products */ = {
+		1BDDEB794E0545D4CD7E7EF99682C729 /* UIColor+Hex */ = {
 			isa = PBXGroup;
 			children = (
-				42FF14F287075C415192AD2B21A997A9 /* libPods-konosuba.a */,
-				E129D4093721404BDAB5104A872FA388 /* libUIColor+Hex.a */,
-				E0A21A6E0CF335C27886B339BB1FC893 /* libViewUtils.a */,
+				D768338DC164283632691B878FA9ACC0 /* Support Files */,
+				4906C46BCCC386F3575938DC2FBAA07E /* UIColor */,
 			);
-			name = Products;
+			path = "UIColor+Hex";
 			sourceTree = "<group>";
 		};
-		2E794884E329026EEED7DB078D3B93C4 /* UIColor */ = {
+		2E8FE38ACFB66FA3BC17FEB0433E1441 /* ViewUtils */ = {
 			isa = PBXGroup;
 			children = (
-				F99A7DEC0B2FE7E123AC7F97A307BAB9 /* UIColor+Hex.h */,
-				222BF6D4ACCCD3286A1B1479585C28AB /* UIColor+Hex.m */,
+				1DFCFC68AA478BC2A731843D67FBE8B5 /* ViewUtils.h */,
+				0A7B33E85683E66FB2171A04E9738D53 /* ViewUtils.m */,
+				E286A9A0AFF69BDDC4B4AB0A0F3F798F /* Support Files */,
+			);
+			path = ViewUtils;
+			sourceTree = "<group>";
+		};
+		3926C638AD0708942C88C2BC89261735 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				258B0C8029B3982F03A30ED9FB271283 /* Foundation.framework */,
+				B18F24645AA4D651DFC7B69A3A0833DB /* QuartzCore.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3926C638AD0708942C88C2BC89261735 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4906C46BCCC386F3575938DC2FBAA07E /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				ED207061EC25C631D0FABBE2BD0768F6 /* UIColor+Hex.h */,
+				8D3E31EEBB7EF70BA0B81EC67A09B986 /* UIColor+Hex.m */,
 			);
 			name = UIColor;
 			sourceTree = "<group>";
 		};
-		52643C33CE74FFF57EE1B05FB2EAC0B4 /* Support Files */ = {
+		6DE43A5B474553118B610051E9299909 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				34D79F6D8435F05AD9F4D9385E4A6F78 /* ViewUtils.xcconfig */,
-				28A599155C45BAAFD92FEF6E99EB3D33 /* ViewUtils-dummy.m */,
-				113ED51D19EFBD1D313CD0C9D1AA622E /* ViewUtils-prefix.pch */,
+				E649783D4246E5CC3C5BD01F09129689 /* libPods-konosuba.a */,
+				F65BF5CCF7C8AB3AAD63078087EC8631 /* libSVProgressHUD.a */,
+				CBF17449F6C0B6CBD30061D9B42345A9 /* libUIColor+Hex.a */,
+				2475AF33B691CF1CDDDC75CCCB3C1C7C /* libViewUtils.a */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/ViewUtils";
-			sourceTree = "<group>";
-		};
-		680167C8A26913BA6FBC3C345A26DC21 /* UIColor+Hex */ = {
-			isa = PBXGroup;
-			children = (
-				8C49391CC8BF810C5574A0B320028F84 /* Support Files */,
-				2E794884E329026EEED7DB078D3B93C4 /* UIColor */,
-			);
-			path = "UIColor+Hex";
+			name = Products;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				DF5254ADD8D536BF608F8C6BE809A01A /* Pods */,
-				2ACF88D1579B3C218EAF57F69044682F /* Products */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				FD5FF4C63CEBF3D0F905E1283D685A18 /* Pods */,
+				6DE43A5B474553118B610051E9299909 /* Products */,
 				9774EB65DE930C8A57ADDD58B22006FE /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		8C49391CC8BF810C5574A0B320028F84 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				E36E4130527E3AFC41B221390A9A6E80 /* UIColor+Hex.xcconfig */,
-				97F06F8A810D3A0DF4C8D96C7028D1DA /* UIColor+Hex-dummy.m */,
-				E96F78B605B083F85BDBE96CC84855AF /* UIColor+Hex-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/UIColor+Hex";
 			sourceTree = "<group>";
 		};
 		9774EB65DE930C8A57ADDD58B22006FE /* Targets Support Files */ = {
@@ -173,105 +212,127 @@
 			path = "Target Support Files/Pods-konosuba";
 			sourceTree = "<group>";
 		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+		AC08754BC1E3F50EA70D356878736554 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */,
+				8009AC9DD420A5AE7C0888E06A857AB1 /* SVProgressHUD.bundle */,
 			);
-			name = Frameworks;
+			name = Resources;
 			sourceTree = "<group>";
 		};
-		BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */ = {
+		ACD629CE2EB13CF2820C77030505EADC /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */,
+				D772687404B0E985C8CCCCDEFC096B40 /* SVProgressHUD.xcconfig */,
+				C6D69BC22EEAC21CDFA87E322DA636D6 /* SVProgressHUD-dummy.m */,
+				F11A9EA6B6E91E39A19624B50BE4E94B /* SVProgressHUD-prefix.pch */,
 			);
-			name = iOS;
+			name = "Support Files";
+			path = "../Target Support Files/SVProgressHUD";
 			sourceTree = "<group>";
 		};
-		DF5254ADD8D536BF608F8C6BE809A01A /* Pods */ = {
+		BE12558A2D68C81A8F41B4E733DA3448 /* SVProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
-				680167C8A26913BA6FBC3C345A26DC21 /* UIColor+Hex */,
-				E6CBE9C73B4B85E04EC5B48CADA8D734 /* ViewUtils */,
+				C2A0F35DA9C35A8D55DBFE92153866F2 /* SVIndefiniteAnimatedView.h */,
+				1E9563A2950797DDD8E882EC4E356B40 /* SVIndefiniteAnimatedView.m */,
+				94A618D9C67F14778717F46F8DB6BED4 /* SVProgressHUD.h */,
+				9ED8C73088C2C16C046F64D273CA6BD4 /* SVProgressHUD.m */,
+				AC08754BC1E3F50EA70D356878736554 /* Resources */,
+				ACD629CE2EB13CF2820C77030505EADC /* Support Files */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
+		D768338DC164283632691B878FA9ACC0 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F06FFE335944F52EA439C46A9369BEEE /* UIColor+Hex.xcconfig */,
+				DF207CCDB32446FBEDF05B280A2637BF /* UIColor+Hex-dummy.m */,
+				38CB61DCC3EEDE13AE5BC80C7BB7FA8C /* UIColor+Hex-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/UIColor+Hex";
+			sourceTree = "<group>";
+		};
+		E286A9A0AFF69BDDC4B4AB0A0F3F798F /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A5AFCE3C7748A36BEB58F4CD90858DCB /* ViewUtils.xcconfig */,
+				DE3CA335542717F95046BA84D9D817D2 /* ViewUtils-dummy.m */,
+				DD8273100EE9401D2C9F99C66C2DD18F /* ViewUtils-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/ViewUtils";
+			sourceTree = "<group>";
+		};
+		FD5FF4C63CEBF3D0F905E1283D685A18 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BE12558A2D68C81A8F41B4E733DA3448 /* SVProgressHUD */,
+				1BDDEB794E0545D4CD7E7EF99682C729 /* UIColor+Hex */,
+				2E8FE38ACFB66FA3BC17FEB0433E1441 /* ViewUtils */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		E6CBE9C73B4B85E04EC5B48CADA8D734 /* ViewUtils */ = {
-			isa = PBXGroup;
-			children = (
-				856DB42CF03EAD07A736CAD193BFF6A2 /* ViewUtils.h */,
-				FFB03A7E1E5E6A1A2C35A70753E5A67F /* ViewUtils.m */,
-				52643C33CE74FFF57EE1B05FB2EAC0B4 /* Support Files */,
-			);
-			path = ViewUtils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		09D180617924531088B9A3F5E25CD07C /* Headers */ = {
+		51606438B2B7E55EA247F6D5BD75C4A6 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FF5F9F0594F49B0EBD6B303BF0560DF /* ViewUtils.h in Headers */,
+				D586FD3B31456FAE9BA51B09D218E057 /* SVIndefiniteAnimatedView.h in Headers */,
+				E225652A80673817C9F80799489D08B7 /* SVProgressHUD.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7E3518335D46A569D13ECF1EF2D08D7A /* Headers */ = {
+		655DF4AE42660EC2A7CBACB2C197AC3C /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5536F80C2C6F427FC97951B8C7093512 /* UIColor+Hex.h in Headers */,
+				8918061931F3D56C39DA2E266A60B948 /* ViewUtils.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F144242964AA155CE7FAC83DDFFF4621 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E0A3CC304AA2B939B7E743504A21E1E /* UIColor+Hex.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		03B96D1893A9A62EBA25493298C74A3D /* Pods-konosuba */ = {
+		3D0F270C3875A6D09583908852CA193A /* Pods-konosuba */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DF5F7382A065ED680EF774E97C0C65C2 /* Build configuration list for PBXNativeTarget "Pods-konosuba" */;
+			buildConfigurationList = 95D4D9AEA999D6609498339FB283FFD0 /* Build configuration list for PBXNativeTarget "Pods-konosuba" */;
 			buildPhases = (
-				C4C67087CE85EF1D29A8F44F10E78C76 /* Sources */,
-				B1E6B8591B926B97828241419A315D89 /* Frameworks */,
+				4801D4A933A773FCB9F846DB04ABA3D9 /* Sources */,
+				AD96DF2AC552BBE9EA7EB8BD15C4F106 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				444748C9D118808E6C5D61F6D0E17A8D /* PBXTargetDependency */,
-				B2D2C22DBBEF3C5C854B60F1A31F6764 /* PBXTargetDependency */,
+				9856E405103436E5253A8153FD627FB1 /* PBXTargetDependency */,
+				3CD62733B9595C192273AD9AC1F72F96 /* PBXTargetDependency */,
+				E4C5E0132D788882E383A49FD76F8D63 /* PBXTargetDependency */,
 			);
 			name = "Pods-konosuba";
 			productName = "Pods-konosuba";
-			productReference = 42FF14F287075C415192AD2B21A997A9 /* libPods-konosuba.a */;
+			productReference = E649783D4246E5CC3C5BD01F09129689 /* libPods-konosuba.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		184DD92B5516091560073F494171F6FE /* UIColor+Hex */ = {
+		708689590E6A7CFCCC3749FB8E016CCC /* ViewUtils */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9F79DD39B09E08A6172C35F0309A4841 /* Build configuration list for PBXNativeTarget "UIColor+Hex" */;
+			buildConfigurationList = 2FBB88ABC06E6AB7306A0CCA5A8E0B36 /* Build configuration list for PBXNativeTarget "ViewUtils" */;
 			buildPhases = (
-				DB5624BC215D7B280EF32F5A2A8DD905 /* Sources */,
-				C316966CB4081701FA119832F8140FCA /* Frameworks */,
-				7E3518335D46A569D13ECF1EF2D08D7A /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "UIColor+Hex";
-			productName = "UIColor+Hex";
-			productReference = E129D4093721404BDAB5104A872FA388 /* libUIColor+Hex.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		EFC5BD5F58684AA476540F60F785FE33 /* ViewUtils */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4771591549DB208DF2A9D46AACA369D6 /* Build configuration list for PBXNativeTarget "ViewUtils" */;
-			buildPhases = (
-				D5EBEC4FFA509E0B977ACA1FF4FFD357 /* Sources */,
-				0C87936EB3A3034A11CBA054CC710A36 /* Frameworks */,
-				09D180617924531088B9A3F5E25CD07C /* Headers */,
+				2B322AA3A5700A660EC78E774F309057 /* Sources */,
+				DB0234D9DAAEFCEDECFA764AB28ECDA4 /* Frameworks */,
+				655DF4AE42660EC2A7CBACB2C197AC3C /* Headers */,
 			);
 			buildRules = (
 			);
@@ -279,7 +340,41 @@
 			);
 			name = ViewUtils;
 			productName = ViewUtils;
-			productReference = E0A21A6E0CF335C27886B339BB1FC893 /* libViewUtils.a */;
+			productReference = 2475AF33B691CF1CDDDC75CCCB3C1C7C /* libViewUtils.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		D685FFBBE45A4B7AF893456979BB7991 /* SVProgressHUD */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3FE15A9966D8AAA0126F3081D8BFA70A /* Build configuration list for PBXNativeTarget "SVProgressHUD" */;
+			buildPhases = (
+				FB61FD4354661FB8BEDA4C950616BC9F /* Sources */,
+				E26C009A9C651D0C7699C46CFF297BDB /* Frameworks */,
+				51606438B2B7E55EA247F6D5BD75C4A6 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SVProgressHUD;
+			productName = SVProgressHUD;
+			productReference = F65BF5CCF7C8AB3AAD63078087EC8631 /* libSVProgressHUD.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		DAEC51BE7BBB898A862E1B71764A4894 /* UIColor+Hex */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 35494DED1AEEB7B85DB8160126228D38 /* Build configuration list for PBXNativeTarget "UIColor+Hex" */;
+			buildPhases = (
+				18B82571978EB256E8482FF5B3718DCE /* Sources */,
+				CAD2EBD8AEA29655DCD14F2460FCBFDE /* Frameworks */,
+				F144242964AA155CE7FAC83DDFFF4621 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "UIColor+Hex";
+			productName = "UIColor+Hex";
+			productReference = CBF17449F6C0B6CBD30061D9B42345A9 /* libUIColor+Hex.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -299,121 +394,85 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 2ACF88D1579B3C218EAF57F69044682F /* Products */;
+			productRefGroup = 6DE43A5B474553118B610051E9299909 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				03B96D1893A9A62EBA25493298C74A3D /* Pods-konosuba */,
-				184DD92B5516091560073F494171F6FE /* UIColor+Hex */,
-				EFC5BD5F58684AA476540F60F785FE33 /* ViewUtils */,
+				3D0F270C3875A6D09583908852CA193A /* Pods-konosuba */,
+				D685FFBBE45A4B7AF893456979BB7991 /* SVProgressHUD */,
+				DAEC51BE7BBB898A862E1B71764A4894 /* UIColor+Hex */,
+				708689590E6A7CFCCC3749FB8E016CCC /* ViewUtils */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		C4C67087CE85EF1D29A8F44F10E78C76 /* Sources */ = {
+		18B82571978EB256E8482FF5B3718DCE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B93512F1E1A5B80B3E773704F1E36F05 /* Pods-konosuba-dummy.m in Sources */,
+				D99A0B07D37FC10038CE4C0430EA885B /* UIColor+Hex-dummy.m in Sources */,
+				BE9E180104B909508FC61DEB2772DEC0 /* UIColor+Hex.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D5EBEC4FFA509E0B977ACA1FF4FFD357 /* Sources */ = {
+		2B322AA3A5700A660EC78E774F309057 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				962398C2D0E7B71ACF49C0348014865F /* ViewUtils-dummy.m in Sources */,
-				C5219690529B5284288EF65A25AF5AA1 /* ViewUtils.m in Sources */,
+				9F11403527B2028CD13E8B3C33968DE0 /* ViewUtils-dummy.m in Sources */,
+				E8CC36F023593D4D387C1C4C1E78CDF6 /* ViewUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DB5624BC215D7B280EF32F5A2A8DD905 /* Sources */ = {
+		4801D4A933A773FCB9F846DB04ABA3D9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B05CE37DC4B9AEDC82360033D317BB2 /* UIColor+Hex-dummy.m in Sources */,
-				9610BE7BE32FCD0B2F491FB5BEE4C002 /* UIColor+Hex.m in Sources */,
+				220C1642CA41B5F12DF52B7A5F55897B /* Pods-konosuba-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB61FD4354661FB8BEDA4C950616BC9F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				060B863FD97DBB9D799E20306E6C9A29 /* SVIndefiniteAnimatedView.m in Sources */,
+				7DAEDCAF4858AECF5A86E569C65ED023 /* SVProgressHUD-dummy.m in Sources */,
+				3668D36B2253A07B94A7CF6B2793745E /* SVProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		444748C9D118808E6C5D61F6D0E17A8D /* PBXTargetDependency */ = {
+		3CD62733B9595C192273AD9AC1F72F96 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "UIColor+Hex";
-			target = 184DD92B5516091560073F494171F6FE /* UIColor+Hex */;
-			targetProxy = ACF5491E2C069CA61FC27159C6F3A8B8 /* PBXContainerItemProxy */;
+			target = DAEC51BE7BBB898A862E1B71764A4894 /* UIColor+Hex */;
+			targetProxy = BA3F21AAC533B9F54753C1944F7B6259 /* PBXContainerItemProxy */;
 		};
-		B2D2C22DBBEF3C5C854B60F1A31F6764 /* PBXTargetDependency */ = {
+		9856E405103436E5253A8153FD627FB1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SVProgressHUD;
+			target = D685FFBBE45A4B7AF893456979BB7991 /* SVProgressHUD */;
+			targetProxy = D26EA592CA0DA68AB5CFF0EAB4336416 /* PBXContainerItemProxy */;
+		};
+		E4C5E0132D788882E383A49FD76F8D63 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = ViewUtils;
-			target = EFC5BD5F58684AA476540F60F785FE33 /* ViewUtils */;
-			targetProxy = 5702B604E6A2097C5FA799E467F17367 /* PBXContainerItemProxy */;
+			target = 708689590E6A7CFCCC3749FB8E016CCC /* ViewUtils */;
+			targetProxy = 59BECFDD92363F9D9B6C3F8FFE3FC7DF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		23DF20375AC2733DE2E1CDBF1730DDF0 /* Release */ = {
+		278061EAEE49DA63AB9BFA9E60E7B47C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 34D79F6D8435F05AD9F4D9385E4A6F78 /* ViewUtils.xcconfig */;
+			baseConfigurationReference = D772687404B0E985C8CCCCDEFC096B40 /* SVProgressHUD.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/ViewUtils/ViewUtils-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		39EAB0F8CCDC9C80AC7D09AB17C43793 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4B743DB40605FE6FAC07A4644EA6E6F0 /* Pods-konosuba.release.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		608AAD38FCD40CA265979E37A3310B2B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E36E4130527E3AFC41B221390A9A6E80 /* UIColor+Hex.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/UIColor+Hex/UIColor+Hex-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		6464162E6A5C18D8EB618AA52E6653B5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E36E4130527E3AFC41B221390A9A6E80 /* UIColor+Hex.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/UIColor+Hex/UIColor+Hex-prefix.pch";
+				GCC_PREFIX_HEADER = "Target Support Files/SVProgressHUD/SVProgressHUD-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
@@ -426,12 +485,65 @@
 			};
 			name = Debug;
 		};
-		A323D7875D45D9C23EB5B1D9CEB1B94F /* Debug */ = {
+		57E93A2778901B5971DC2E98C9EEFBB6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 34D79F6D8435F05AD9F4D9385E4A6F78 /* ViewUtils.xcconfig */;
+			baseConfigurationReference = BD771365C70428620ADF84995B5D9469 /* Pods-konosuba.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		6BAA8AB9A47F4849E37F356EECE9AE85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5AFCE3C7748A36BEB58F4CD90858DCB /* ViewUtils.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/ViewUtils/ViewUtils-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		7A1960954DF157004CEEF9C3920E9719 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D772687404B0E985C8CCCCDEFC096B40 /* SVProgressHUD.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SVProgressHUD/SVProgressHUD-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		886EE24A43EF26BE9E6C37231175C471 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F06FFE335944F52EA439C46A9369BEEE /* UIColor+Hex.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/UIColor+Hex/UIColor+Hex-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
@@ -483,18 +595,54 @@
 			};
 			name = Debug;
 		};
-		F01C601007B10C1531DF46706F5F687D /* Debug */ = {
+		B896C2A1C082327EEE0EF703235E4C61 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BD771365C70428620ADF84995B5D9469 /* Pods-konosuba.debug.xcconfig */;
+			baseConfigurationReference = 4B743DB40605FE6FAC07A4644EA6E6F0 /* Pods-konosuba.release.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		B9F5C74EC8DA90508DDC2FB955A872DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F06FFE335944F52EA439C46A9369BEEE /* UIColor+Hex.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/UIColor+Hex/UIColor+Hex-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		D860E33C6061AA84AA6F94D9A9C8120A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5AFCE3C7748A36BEB58F4CD90858DCB /* ViewUtils.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ViewUtils/ViewUtils-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
@@ -546,29 +694,38 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4771591549DB208DF2A9D46AACA369D6 /* Build configuration list for PBXNativeTarget "ViewUtils" */ = {
+		2FBB88ABC06E6AB7306A0CCA5A8E0B36 /* Build configuration list for PBXNativeTarget "ViewUtils" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A323D7875D45D9C23EB5B1D9CEB1B94F /* Debug */,
-				23DF20375AC2733DE2E1CDBF1730DDF0 /* Release */,
+				D860E33C6061AA84AA6F94D9A9C8120A /* Debug */,
+				6BAA8AB9A47F4849E37F356EECE9AE85 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9F79DD39B09E08A6172C35F0309A4841 /* Build configuration list for PBXNativeTarget "UIColor+Hex" */ = {
+		35494DED1AEEB7B85DB8160126228D38 /* Build configuration list for PBXNativeTarget "UIColor+Hex" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6464162E6A5C18D8EB618AA52E6653B5 /* Debug */,
-				608AAD38FCD40CA265979E37A3310B2B /* Release */,
+				886EE24A43EF26BE9E6C37231175C471 /* Debug */,
+				B9F5C74EC8DA90508DDC2FB955A872DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DF5F7382A065ED680EF774E97C0C65C2 /* Build configuration list for PBXNativeTarget "Pods-konosuba" */ = {
+		3FE15A9966D8AAA0126F3081D8BFA70A /* Build configuration list for PBXNativeTarget "SVProgressHUD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F01C601007B10C1531DF46706F5F687D /* Debug */,
-				39EAB0F8CCDC9C80AC7D09AB17C43793 /* Release */,
+				278061EAEE49DA63AB9BFA9E60E7B47C /* Debug */,
+				7A1960954DF157004CEEF9C3920E9719 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		95D4D9AEA999D6609498339FB283FFD0 /* Build configuration list for PBXNativeTarget "Pods-konosuba" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				57E93A2778901B5971DC2E98C9EEFBB6 /* Debug */,
+				B896C2A1C082327EEE0EF703235E4C61 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -6,6 +6,7 @@
 target 'konosuba' do
 pod 'UIColor+Hex'
 pod 'ViewUtils'
+pod 'SVProgressHUD'
 end
 
 target 'konosubaTests' do
