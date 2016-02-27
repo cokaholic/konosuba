@@ -12,7 +12,8 @@
 
 const CGFloat kDefaultMargin = 10;
 const CGFloat kNavigationBarHeight = 64;
-const CGFloat kStepperTotalNumberOfpage = 4;
+const CGFloat kStepperBottomHeight = 140;
+const CGFloat kStepperTotalNumberOfpage = 5;
 
 // Color
 NSString *kColorCodeBlack = @"#000000";

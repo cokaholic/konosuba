@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		5EE7D55811B3CAD6817EB1DC /* libPods-konosuba.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5922D0003778E3012EB389C5 /* libPods-konosuba.a */; };
 		705EDEF41C8171CF0021DD71 /* KSBBgmSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 705EDEF31C8171CF0021DD71 /* KSBBgmSettingViewController.m */; };
-		705EDEF71C81770D0021DD71 /* KSBBgmSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 705EDEF61C81770D0021DD71 /* KSBBgmSettingView.m */; };
 		9F20D8461C8144A900A41B90 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F20D8451C8144A900A41B90 /* main.m */; };
 		9F20D8491C8144A900A41B90 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F20D8481C8144A900A41B90 /* AppDelegate.m */; };
 		9F20D8511C8144A900A41B90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F20D8501C8144A900A41B90 /* Assets.xcassets */; };
@@ -24,6 +23,12 @@
 		9F20D8941C819CD500A41B90 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F20D8931C819CD500A41B90 /* AssetsLibrary.framework */; };
 		9F20D8961C819CE300A41B90 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F20D8951C819CE300A41B90 /* AVFoundation.framework */; };
 		9F20D89A1C81CE3000A41B90 /* KSBAVAssetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F20D8991C81CE3000A41B90 /* KSBAVAssetManager.m */; };
+		9F20D89E1C81DA1800A41B90 /* no-poi!.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9F20D89D1C81DA1800A41B90 /* no-poi!.mp3 */; };
+		9F20D8A51C81DAFC00A41B90 /* RETrimControl.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9F20D8A01C81DAFC00A41B90 /* RETrimControl.bundle */; };
+		9F20D8A61C81DAFC00A41B90 /* RETrimControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F20D8A21C81DAFC00A41B90 /* RETrimControl.m */; };
+		9F20D8A71C81DAFC00A41B90 /* RETrimPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F20D8A41C81DAFC00A41B90 /* RETrimPopover.m */; };
+		9F20D8AC1C8213E900A41B90 /* TSLibraryImport.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F20D8AB1C8213E900A41B90 /* TSLibraryImport.m */; };
+		9F20D8B01C8223D900A41B90 /* KSBBgmTrimViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F20D8AF1C8223D900A41B90 /* KSBBgmTrimViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,8 +53,6 @@
 		5922D0003778E3012EB389C5 /* libPods-konosuba.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-konosuba.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		705EDEF21C8171CF0021DD71 /* KSBBgmSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSBBgmSettingViewController.h; sourceTree = "<group>"; };
 		705EDEF31C8171CF0021DD71 /* KSBBgmSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSBBgmSettingViewController.m; sourceTree = "<group>"; };
-		705EDEF51C81770D0021DD71 /* KSBBgmSettingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSBBgmSettingView.h; sourceTree = "<group>"; };
-		705EDEF61C81770D0021DD71 /* KSBBgmSettingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSBBgmSettingView.m; sourceTree = "<group>"; };
 		9BF021385222574E677ECF36 /* Pods-konosuba.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-konosuba.release.xcconfig"; path = "Pods/Target Support Files/Pods-konosuba/Pods-konosuba.release.xcconfig"; sourceTree = "<group>"; };
 		9F20D8411C8144A900A41B90 /* konosuba.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = konosuba.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F20D8451C8144A900A41B90 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -80,6 +83,16 @@
 		9F20D8951C819CE300A41B90 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		9F20D8981C81CE3000A41B90 /* KSBAVAssetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSBAVAssetManager.h; sourceTree = "<group>"; };
 		9F20D8991C81CE3000A41B90 /* KSBAVAssetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSBAVAssetManager.m; sourceTree = "<group>"; };
+		9F20D89D1C81DA1800A41B90 /* no-poi!.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "no-poi!.mp3"; sourceTree = "<group>"; };
+		9F20D8A01C81DAFC00A41B90 /* RETrimControl.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = RETrimControl.bundle; sourceTree = "<group>"; };
+		9F20D8A11C81DAFC00A41B90 /* RETrimControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RETrimControl.h; sourceTree = "<group>"; };
+		9F20D8A21C81DAFC00A41B90 /* RETrimControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RETrimControl.m; sourceTree = "<group>"; };
+		9F20D8A31C81DAFC00A41B90 /* RETrimPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RETrimPopover.h; sourceTree = "<group>"; };
+		9F20D8A41C81DAFC00A41B90 /* RETrimPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RETrimPopover.m; sourceTree = "<group>"; };
+		9F20D8AA1C8213E900A41B90 /* TSLibraryImport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSLibraryImport.h; sourceTree = "<group>"; };
+		9F20D8AB1C8213E900A41B90 /* TSLibraryImport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSLibraryImport.m; sourceTree = "<group>"; };
+		9F20D8AE1C8223D900A41B90 /* KSBBgmTrimViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSBBgmTrimViewController.h; sourceTree = "<group>"; };
+		9F20D8AF1C8223D900A41B90 /* KSBBgmTrimViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSBBgmTrimViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,22 +124,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		705EDEF11C8170B00021DD71 /* KDBBgmSettingViewController */ = {
+		705EDEF11C8170B00021DD71 /* KSBBgmSettingViewController */ = {
 			isa = PBXGroup;
 			children = (
 				705EDEF21C8171CF0021DD71 /* KSBBgmSettingViewController.h */,
 				705EDEF31C8171CF0021DD71 /* KSBBgmSettingViewController.m */,
 			);
-			name = KDBBgmSettingViewController;
-			sourceTree = "<group>";
-		};
-		705EDEF81C8177150021DD71 /* BgmSettingView */ = {
-			isa = PBXGroup;
-			children = (
-				705EDEF51C81770D0021DD71 /* KSBBgmSettingView.h */,
-				705EDEF61C81770D0021DD71 /* KSBBgmSettingView.m */,
-			);
-			name = BgmSettingView;
+			name = KSBBgmSettingViewController;
 			sourceTree = "<group>";
 		};
 		7F763701D5E294E2B197619E /* Frameworks */ = {
@@ -167,6 +171,7 @@
 			children = (
 				9F20D8471C8144A900A41B90 /* AppDelegate.h */,
 				9F20D8481C8144A900A41B90 /* AppDelegate.m */,
+				9F20D8A81C8213D400A41B90 /* ThirdParty */,
 				9F20D8881C8165DE00A41B90 /* Const */,
 				9F20D8821C81639500A41B90 /* Manager */,
 				9F20D8801C81637900A41B90 /* Model */,
@@ -183,6 +188,7 @@
 		9F20D8441C8144A900A41B90 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9F20D89C1C81D9DC00A41B90 /* SampleAudio */,
 				9F20D8451C8144A900A41B90 /* main.m */,
 				9F20D88D1C8166AA00A41B90 /* konosuba-PrefixHeader.pch */,
 			);
@@ -210,7 +216,8 @@
 		9F20D87D1C81635100A41B90 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				705EDEF11C8170B00021DD71 /* KDBBgmSettingViewController */,
+				9F20D8AD1C82238600A41B90 /* KSBBgmTrimViewController */,
+				705EDEF11C8170B00021DD71 /* KSBBgmSettingViewController */,
 				9F20D87F1C81636A00A41B90 /* KSBTopViewController */,
 				9F20D87E1C81635E00A41B90 /* KSBStepperViewController */,
 			);
@@ -245,7 +252,7 @@
 		9F20D8811C81638000A41B90 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				705EDEF81C8177150021DD71 /* BgmSettingView */,
+				9F20D89F1C81DAFC00A41B90 /* RETrimControl */,
 				9F20D8831C8163CF00A41B90 /* StepperView */,
 			);
 			name = View;
@@ -286,6 +293,52 @@
 				9F20D8991C81CE3000A41B90 /* KSBAVAssetManager.m */,
 			);
 			name = KSBAVAssetManager;
+			sourceTree = "<group>";
+		};
+		9F20D89C1C81D9DC00A41B90 /* SampleAudio */ = {
+			isa = PBXGroup;
+			children = (
+				9F20D89D1C81DA1800A41B90 /* no-poi!.mp3 */,
+			);
+			name = SampleAudio;
+			sourceTree = "<group>";
+		};
+		9F20D89F1C81DAFC00A41B90 /* RETrimControl */ = {
+			isa = PBXGroup;
+			children = (
+				9F20D8A01C81DAFC00A41B90 /* RETrimControl.bundle */,
+				9F20D8A11C81DAFC00A41B90 /* RETrimControl.h */,
+				9F20D8A21C81DAFC00A41B90 /* RETrimControl.m */,
+				9F20D8A31C81DAFC00A41B90 /* RETrimPopover.h */,
+				9F20D8A41C81DAFC00A41B90 /* RETrimPopover.m */,
+			);
+			path = RETrimControl;
+			sourceTree = "<group>";
+		};
+		9F20D8A81C8213D400A41B90 /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				9F20D8A91C8213DB00A41B90 /* TSLibraryImport */,
+			);
+			name = ThirdParty;
+			sourceTree = "<group>";
+		};
+		9F20D8A91C8213DB00A41B90 /* TSLibraryImport */ = {
+			isa = PBXGroup;
+			children = (
+				9F20D8AA1C8213E900A41B90 /* TSLibraryImport.h */,
+				9F20D8AB1C8213E900A41B90 /* TSLibraryImport.m */,
+			);
+			name = TSLibraryImport;
+			sourceTree = "<group>";
+		};
+		9F20D8AD1C82238600A41B90 /* KSBBgmTrimViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9F20D8AE1C8223D900A41B90 /* KSBBgmTrimViewController.h */,
+				9F20D8AF1C8223D900A41B90 /* KSBBgmTrimViewController.m */,
+			);
+			name = KSBBgmTrimViewController;
 			sourceTree = "<group>";
 		};
 		F55F1BA17371D8C6E3FBEC14 /* Pods */ = {
@@ -403,8 +456,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F20D8A51C81DAFC00A41B90 /* RETrimControl.bundle in Resources */,
 				9F20D8541C8144A900A41B90 /* LaunchScreen.storyboard in Resources */,
 				9F20D8511C8144A900A41B90 /* Assets.xcassets in Resources */,
+				9F20D89E1C81DA1800A41B90 /* no-poi!.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,14 +532,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F20D8A61C81DAFC00A41B90 /* RETrimControl.m in Sources */,
 				9F20D8491C8144A900A41B90 /* AppDelegate.m in Sources */,
 				9F20D89A1C81CE3000A41B90 /* KSBAVAssetManager.m in Sources */,
 				9F20D8871C8163CF00A41B90 /* StepperView.m in Sources */,
+				9F20D8A71C81DAFC00A41B90 /* RETrimPopover.m in Sources */,
+				9F20D8AC1C8213E900A41B90 /* TSLibraryImport.m in Sources */,
 				9F20D8461C8144A900A41B90 /* main.m in Sources */,
 				9F20D88C1C8165E800A41B90 /* Const.m in Sources */,
 				705EDEF41C8171CF0021DD71 /* KSBBgmSettingViewController.m in Sources */,
-				705EDEF71C81770D0021DD71 /* KSBBgmSettingView.m in Sources */,
 				9F20D8791C8144C600A41B90 /* KSBTopViewController.m in Sources */,
+				9F20D8B01C8223D900A41B90 /* KSBBgmTrimViewController.m in Sources */,
 				9F20D87C1C81632900A41B90 /* KSBStepperViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

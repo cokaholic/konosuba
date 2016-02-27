@@ -13,6 +13,7 @@
 
 extern const CGFloat kDefaultMargin;
 extern const CGFloat kNavigationBarHeight;
+extern const CGFloat kStepperBottomHeight;
 extern const CGFloat kStepperTotalNumberOfpage;
 
 //Color

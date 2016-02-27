@@ -15,12 +15,14 @@
     [super viewDidLoad];
     
     [self.headerStepperView setStepWithNumber:1];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     
     // デバッグ用に自動で遷移
     KSBBgmSettingViewController *bsvc = [[KSBBgmSettingViewController alloc] init];
     [self.navigationController pushViewController:bsvc animated:YES];
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {
