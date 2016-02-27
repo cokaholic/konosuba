@@ -24,7 +24,7 @@
         _timeLabel.font = [UIFont boldSystemFontOfSize:10];
         _timeLabel.backgroundColor = [UIColor clearColor];
         _timeLabel.textColor = [UIColor whiteColor];
-        _timeLabel.textAlignment = UITextAlignmentCenter;
+        _timeLabel.textAlignment = NSTextAlignmentCenter;
         [self addSubview:_timeLabel];
         self.alpha = 0;
     }

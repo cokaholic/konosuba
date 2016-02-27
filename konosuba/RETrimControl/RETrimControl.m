@@ -95,7 +95,7 @@
         _timeLabelLong.font = [UIFont boldSystemFontOfSize:10];
         _timeLabelLong.backgroundColor = [UIColor clearColor];
         _timeLabelLong.textColor = [UIColor whiteColor];
-        _timeLabelLong.textAlignment = UITextAlignmentCenter;
+        _timeLabelLong.textAlignment = NSTextAlignmentCenter;
         [_popoverViewLong addSubview:_timeLabelLong];
         _popoverViewLong.alpha = 0;
         [self addSubview:_popoverViewLong];

@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "KSBTopViewController.h"
+#import "FirstViewController.h"
 
 @interface AppDelegate ()
 
@@ -20,8 +21,9 @@
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
-    KSBTopViewController *tvc = [[KSBTopViewController alloc] init];
-    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:tvc];
+//    KSBTopViewController *tvc = [[KSBTopViewController alloc] init];
+    FirstViewController *fvc = [[FirstViewController alloc] init];
+    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:fvc];
     self.window.rootViewController = nvc;
     [self.window makeKeyAndVisible];
     

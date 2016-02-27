@@ -12,6 +12,7 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import <AVFoundation/AVFoundation.h>
 #import <AssetsLibrary/AssetsLibrary.h>
+#import "KSBConvertViewController.h"
 
 static NSString * const kCellIdentifier = @"Cell";
 
