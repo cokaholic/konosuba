@@ -1,5 +1,5 @@
 //
-//  GIBgmSettingViewController.h
+//  KSBBgmSettingView.h
 //  konosuba
 //
 //  Created by 石橋 弦樹 on 2016/02/27.
@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GIBgmSettingViewController : UIViewController
+@interface KSBBgmSettingView : UIView
 
+- (void)drawBgmSettingInView:(UIView *)containerView headerView:(UIView *)headerView;
 @end
