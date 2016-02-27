@@ -97,14 +97,17 @@
     for (KSBAnimationAction *action in _actions) {
     
 //        NSLog(@"loop");
-        double dt = [action getDuration] / (double)_frameRate;
-        double dx = ([action getDestFrame].origin.x - [action getSrcFrame].origin.x) / (double)_frameRate;
-        double dy = ([action getDestFrame].origin.y - [action getSrcFrame].origin.y) / (double)_frameRate;
-        CGFloat newX = [action getSrcFrame].origin.x;
-        CGFloat newY = [action getSrcFrame].origin.y;
+        CGPoint imageViewOrigin = action.imageView.origin;
+        double dt = action.duration.doubleValue / (double)_frameRate;
+        double dx = (action.destValue.CGPointValue.x - imageViewOrigin.x) / (double)_frameRate;
+        double dy = (action.destValue.CGPointValue.y - imageViewOrigin.y) / (double)_frameRate;
+        CGFloat newX = imageViewOrigin.x;
+        CGFloat newY = imageViewOrigin.y;
         
         // 拡大率()
         // 横拡大率
+        double ds = (action.scale.doubleValue - 1) / (double)_frameRate;
+        double newDs = 1;
 //        double s_width = [action getDestFrame].size.width / [action getSrcFrame].size.width;
 //        double s_height = [action getDestFrame].size.height / [action getSrcFrame].size.height;
 //        double ds_width = s_width - 1.0 / (double)_frameRate;
@@ -112,28 +115,24 @@
 //        double newS_width = s_width;
 //        double newS_height = s_height;
         
-        for (int i = 1; i * dt <= [action getDuration]; i++) { // コマ数
+        for (int i = 1; i * dt <= action.duration.doubleValue; i++) { // コマ数
             // 5
             @autoreleasepool {
                 
                 UIGraphicsBeginImageContext(_windowSize);
                 
                 // 画像拡大
-//                newS_width += ds_width;
-//                newS_height += ds_height;
+                newDs += ds;
                 
-//                CGSize sz = CGSizeMake(self.image.size.width*newS_width,
-//                                       self.image.size.height*newS_height);
-//                [self.image drawInRect:CGRectMake(0, 0, sz.width, sz.height)];
-//                UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+                CGSize sz = CGSizeMake(action.imageView.image.size.width*newDs,
+                                       action.imageView.image.size.height*newDs);
+                [action.imageView.image drawInRect:CGRectMake(0, 0, sz.width, sz.height)];
+                UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
                 
                 [self.bgImage drawAtPoint:CGPointZero];
-//                [newImage drawAtPoint:CGPointMake(newX, newY)];
-                [self.image drawAtPoint:CGPointMake(newX, newY)];
+                [newImage drawAtPoint:CGPointMake(newX, newY)];
                 newX += dx;
                 newY += dy;
-                
-                
                 
                 UIImage *composedImage = UIGraphicsGetImageFromCurrentImageContext();
                 UIGraphicsEndImageContext();

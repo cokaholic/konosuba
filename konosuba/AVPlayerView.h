@@ -11,4 +11,6 @@
 
 @interface AVPlayerView : UIView
 
+@property (nonatomic, retain) AVPlayer *player;
+
 @end

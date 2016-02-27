@@ -9,27 +9,65 @@
 #import "KSBAnimationAction.h"
 
 @implementation KSBAnimationAction{
-    NSTimeInterval _duration;
-    CGRect _srcFrame;
-    CGRect _destFrame;
+//    NSTimeInterval _duration;
+//    CGRect _srcFrame;
+//    CGRect _destFrame;
 }
 
-- (void)setDuration:(NSTimeInterval)duration srcFrame:(CGRect)srcFrame destFrame:(CGRect)destFrame {
-    _duration = duration;
-    _srcFrame = srcFrame;
-    _destFrame = destFrame;
+- (id)initWithImageView:(UIImageView *)imageView
+                 duration:(NSNumber *)duration
+                destValue:(NSValue *)destValue
+                  scale:(NSNumber *)scale {
+    if (self != nil) {
+        self.imageView = imageView;
+        self.duration = duration;
+        self.destValue = destValue;
+        self.scale = scale;
+    }
+    return self;
 }
 
-- (NSTimeInterval)getDuration {
-    return _duration;
+- (UIImageView *)afterImageView {
+    CGRect newRect = self.imageView.frame;
+    newRect.origin = self.destValue.CGPointValue;
+    
+    // UIImageのりサイズ
+    UIImage *img_af;
+    float widthPer = self.scale.doubleValue;
+    float heightPer = self.scale.doubleValue;
+    CGSize resize = CGSizeMake(self.imageView.image.size.width * widthPer, self.imageView.image.size.height * heightPer);
+    UIGraphicsBeginImageContext(resize);
+    [self.imageView.image drawInRect:CGRectMake(0, 0, resize.width, resize.height)];
+    img_af = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    UIImageView *newImageView = [[UIImageView alloc] initWithImage:img_af];
+    CGRect tmpRect = newImageView.frame;
+    tmpRect.origin = newRect.origin;
+    newImageView.frame = tmpRect;
+//    newRect.size = img_af.size;
+//    UIImageView *newImageView = [[UIImageView alloc] initWithFrame:newRect];
+//    newImageView.image = img_af;
+    return newImageView;
+
 }
 
-- (CGRect)getSrcFrame {
-    return _srcFrame;
-}
-
-- (CGRect)getDestFrame {
-    return _destFrame;
-}
+//- (void)setDuration:(NSTimeInterval)duration srcFrame:(CGRect)srcFrame destFrame:(CGRect)destFrame {
+//    _duration = duration;
+//    _srcFrame = srcFrame;
+//    _destFrame = destFrame;
+//}
+//
+//- (NSTimeInterval)getDuration {
+//    return _duration;
+//}
+//
+//- (CGRect)getSrcFrame {
+//    return _srcFrame;
+//}
+//
+//- (CGRect)getDestFrame {
+//    return _destFrame;
+//}
 
 @end

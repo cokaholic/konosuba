@@ -33,19 +33,17 @@
     KSBMovieManager *manager = [KSBMovieManager sharedInstance];
     
     UIImageView *imgView = [[UIImageView alloc] initWithImage:manager.image];
-    KSBAnimationAction *action1 = [[KSBAnimationAction alloc] init];
-    KSBAnimationAction *action2 = [[KSBAnimationAction alloc] init];
-    KSBAnimationAction *action3 = [[KSBAnimationAction alloc] init];
-    
-    // 移動後のframe
     CGRect d = imgView.frame;
     d.origin.y += 200;
     
-    [action1 setDuration:2 srcFrame:imgView.frame destFrame:imgView.frame];
+    KSBAnimationAction *action1 = [[KSBAnimationAction alloc] initWithImageView:imgView duration:@(2) destValue:[NSValue valueWithCGPoint:imgView.origin] scale:@(2)];
+    KSBAnimationAction *action2 = [[KSBAnimationAction alloc] initWithImageView:action1.afterImageView duration:@(2) destValue:[NSValue valueWithCGPoint:d.origin] scale:@(1)];
+    KSBAnimationAction *action3 = [[KSBAnimationAction alloc] initWithImageView:action2.afterImageView duration:@(2) destValue:[NSValue valueWithCGPoint:d.origin] scale:@(0.5)];
+    
+    // 移動後のframe
+    
     [manager addAnimationAction:action1];
-    [action2 setDuration:3 srcFrame:imgView.frame destFrame:d];
     [manager addAnimationAction:action2];
-    [action3 setDuration:2 srcFrame:d destFrame:d];
     [manager addAnimationAction:action3];
     
 //    [manager animationDuration:3 frameRate:40 srcFrame:imgView.frame destFrame:d];

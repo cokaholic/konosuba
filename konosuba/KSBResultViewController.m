@@ -22,19 +22,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    // 動画のURLを生成
-    NSString *urlString = @"https://example.com/hoge.mp4";
-    NSURL *url = [NSURL URLWithString:urlString];
     
-    // URLを元に`AVPlayer`を生成
-    self.player = [[AVPlayer alloc] initWithURL:url];
     
-    // viewのlayerに`AVPlayer`のインスタンスをセット
-    self.playerView = [[AVPlayerView alloc] initWithFrame:self.view.frame];
-    [(AVPlayerLayer*)self.playerView.layer setPlayer:self.player];
+    AVPlayerItem *item = [self.player currentItem];
+    CMTime cmTime = item.asset.duration;
+    Float64 sec = CMTimeGetSeconds(cmTime);
+    NSLog(@"playerduration:%f", sec);
     
-    // 該当のビューを表示
-    [self.view addSubview:self.playerView];
+    [self config];
     
     // `status`の変化を監視
     [self.player addObserver:self
@@ -43,15 +38,56 @@
                      context:nil];
 }
 
+- (void)config {
+    
+    // 動画のURLを生成
+    // TODO変更: tmpMovie→final_video_file
+    NSString *fileName = @"tmpMovie"; // たつみんの変換
+    NSString *destPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *path = [NSString stringWithFormat:@"%@/%@.mp4", destPath, fileName];
+    NSURL *url = [NSURL fileURLWithPath:path];
+    
+    // URLを元に`AVPlayer`を生成
+    self.player = [[AVPlayer alloc] initWithURL:url];
+    
+    // viewのlayerに`AVPlayer`のインスタンスをセット
+    CGRect playerViewFrame = CGRectMake(kDefaultMargin, kStepperBottomHeight, self.view.size.width - kDefaultMargin * 2, self.view.size.height / 2.0);
+    self.playerView = [[AVPlayerView alloc] initWithFrame:playerViewFrame];
+    [self.playerView setBackgroundColor:[UIColor redColor]];
+    [(AVPlayerLayer*)self.playerView.layer setPlayer:self.player];
+    [self.view addSubview:self.playerView];
+    
+    // リプレイボタン
+    CGRect repBtnFrm = CGRectMake(kDefaultMargin, playerViewFrame.size.height + kStepperBottomHeight + kDefaultMargin, self.view.size.width - kDefaultMargin * 2, 44);
+    UIButton *repBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    repBtn.frame = repBtnFrm;
+    [repBtn setTitle:@"リプレイ" forState:UIControlStateNormal];
+    [repBtn addTarget:self action:@selector(replay) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:repBtn];
+}
+
+- (void)replay {
+    [self.player seekToTime:kCMTimeZero];
+    [self.player play];
+}
+
 // `status`の値を監視して、再生可能になったら再生
 - (void)observeValueForKeyPath:(NSString *)keyPath
                       ofObject:(id)object
                         change:(NSDictionary *)change
                        context:(void *)context
 {
+    NSLog(@"observe");
     if (self.player.status == AVPlayerItemStatusReadyToPlay) {
+        NSLog(@"play");
         [self.player removeObserver:self forKeyPath:@"status"];
+        [self.playerView setPlayer:self.player];
         [self.player play];
+        
+        AVPlayerItem *item = [self.player currentItem];
+        CMTime cmTime = item.asset.duration;
+        Float64 sec = CMTimeGetSeconds(cmTime);
+        NSLog(@"playerduration:%f", sec);
         return;
     }
     
