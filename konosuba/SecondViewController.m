@@ -187,16 +187,16 @@
             [frameImages[i] setBackgroundImage:[UIImage imageNamed:@"1-1.png"] forState:UIControlStateNormal];
         }
         if (i==1) {
-            [frameImages[i] setBackgroundImage:[UIImage imageNamed:@"1-2.png"] forState:UIControlStateNormal];
+            [frameImages[i] setBackgroundImage:[UIImage imageNamed:@"2-1.png"] forState:UIControlStateNormal];
         }
         if (i==2) {
             [frameImages[i] setBackgroundImage:[UIImage imageNamed:@"2-1.png"] forState:UIControlStateNormal];
         }
         if (i==3) {
-            [frameImages[i] setBackgroundImage:[UIImage imageNamed:@"2-2.png"] forState:UIControlStateNormal];
+            [frameImages[i] setBackgroundImage:[UIImage imageNamed:@"1-2.png"] forState:UIControlStateNormal];
         }
         if (i==4) {
-            [frameImages[i] setBackgroundImage:[UIImage imageNamed:@"3-1.png"] forState:UIControlStateNormal];
+            [frameImages[i] setBackgroundImage:[UIImage imageNamed:@"2-2.png"] forState:UIControlStateNormal];
         }
         if (i==5) {
             [frameImages[i] setBackgroundImage:[UIImage imageNamed:@"3-2.png"] forState:UIControlStateNormal];
