@@ -10,10 +10,14 @@
 #import "SecondViewController.h"
 #import "KSBMovieManager.h"
 #import "KSBBgmSettingViewController.h"
+#import "CameraViewController.h"
 
-@interface SecondViewController ()
+@interface SecondViewController () <KSBCameraViewControllerDelegate>
+
+@property (nonatomic, strong) CameraViewController *cameraViewController;
 
 @end
+
 
 @implementation SecondViewController
 
@@ -58,11 +62,13 @@
     editingFlag1 = NO;
     editingFlag2 = NO;
     
-    backgroundImgView = [[UIImageView alloc]initWithFrame:self.view.bounds];
-    backgroundImgView.image = [UIImage imageNamed:@"top_shade.png"];
-    backgroundImgView.contentMode = UIViewContentModeScaleAspectFill;
-    backgroundImgView.center = CGPointMake(self.view.bounds.size.width/2, self.view.bounds.size.height/2);
-    [self.view addSubview:backgroundImgView];
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+//    backgroundImgView = [[UIImageView alloc]initWithFrame:self.view.bounds];
+//    backgroundImgView.image = [UIImage imageNamed:@"top_shade.png"];
+//    backgroundImgView.contentMode = UIViewContentModeScaleAspectFill;
+//    backgroundImgView.center = CGPointMake(self.view.bounds.size.width/2, self.view.bounds.size.height/2);
+//    [self.view addSubview:backgroundImgView];
     
     previewImgView = [[UIImageView alloc]initWithFrame:CGRectMake(0, kNavigationBarHeight + kDefaultMargin, CGRectGetWidth(APPFRAME_RECT), 240 * SCREEN_RECT_PERCENT)];
     previewImgView.contentMode = UIViewContentModeScaleAspectFit;
@@ -127,23 +133,22 @@
     [self.view addSubview:saveBtn];
     saveBtn.hidden = YES;
     
-    cameraView = [[UIImagePickerController alloc]init];
-    cameraView.delegate = self;
-    cameraView.sourceType = UIImagePickerControllerSourceTypeCamera;
-    cameraView.allowsEditing = NO;
+    _cameraViewController = [[CameraViewController alloc]init];
+    _cameraViewController.delegate = self;
     
     libraryView = [[UIImagePickerController alloc]init];
     libraryView.delegate = self;
     libraryView.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     libraryView.allowsEditing = YES;
     
-    frameImage = [[UIImageView alloc]initWithFrame:CGRectMake(0, 70, CGRectGetWidth(APPFRAME_RECT), 240 * SCREEN_RECT_PERCENT)];
+    frameImage = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(APPFRAME_RECT), 240 * SCREEN_RECT_PERCENT)];
     frameImage.image = processor_top.effectImage;
-    [cameraView.view addSubview:frameImage];
+    [_cameraViewController.view addSubview:frameImage];
     
-    brankImgView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 345, APPFRAME_RECT.size.width, self.view.bounds.size.height-424)];
+    brankImgView = [[UIImageView alloc]initWithFrame:CGRectMake(0, frameImage.bottom, CGRectGetWidth(APPFRAME_RECT), CGRectGetHeight(SCREEN_RECT)-frameImage.bottom - 50)];
     brankImgView.backgroundColor = [UIColor blackColor];
-    [cameraView.view addSubview:brankImgView];
+    brankImgView.alpha = 0.7;
+    [_cameraViewController.view addSubview:brankImgView];
     
     imageScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, previewImgView.frame.size.height)];
     imageScrollView.contentSize = CGSizeMake(10+(10*160), previewImgView.frame.size.height);
@@ -243,16 +248,86 @@
 //    [banner1 loadRequest:[GADRequest request]];
 }
 
--(void)viewWillAppear:(BOOL)animated{
-    
-    [[UIApplication sharedApplication] setStatusBarHidden:YES];
-}
-
 -(void)viewDidAppear:(BOOL)animated{
     
     if (cameraFlag) {
         
         [self cameraOrLibrary];
+    }
+}
+
+- (void)didPickedImage:(UIImage *)image withIsLandscape:(BOOL)isLandscape withIsFromtMode:(BOOL)isFrontMode {
+    
+    if (imgFlag) {
+        
+        CGSize size = CGSizeMake(480, 360);
+        UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
+        
+        if (isFrontMode) {
+            [image drawInRect:CGRectMake(0, 0, 480, 640)];
+        }
+        else {
+            [image drawInRect:CGRectMake(0, 0, 480, 852)];
+        }
+        
+        previewImgView.image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
+        //オリジナルイメージの保持
+        originalImage1 = previewImgView.image;
+        filterImage1 = originalImage1;
+        
+        UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
+        [[processor_top process:previewImgView.image] drawInRect:CGRectMake(0, 0, 480, 360)];
+        previewImgView.image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
+        cameraFlag = NO;
+        imgFlag = NO;
+        previewImgView.userInteractionEnabled = YES;
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+    else{
+        
+        CGSize size = CGSizeMake(480, 360);
+        UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
+        
+        if (isFrontMode) {
+            [image drawInRect:CGRectMake(0, 0, 480, 640)];
+        }
+        else {
+            [image drawInRect:CGRectMake(0, 0, 480, 852)];
+        }
+        
+        previewImgView2.image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
+        //オリジナルイメージの保持
+        originalImage2 = previewImgView2.image;
+        filterImage2 = originalImage2;
+        
+        UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
+        [[processor_bottom process:previewImgView2.image] drawInRect:CGRectMake(0, 0, 480, 360)];
+        previewImgView2.image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
+        cameraFlag = NO;
+        
+        //        cameraBtn.hidden = YES;
+        //        twitterBtn.hidden = NO;
+        //        facebookBtn.hidden = NO;
+        saveBtn.hidden = NO;
+        cameraBtn.hidden = YES;
+        previewImgView2.userInteractionEnabled = YES;
+        
+        CGSize size2 = CGSizeMake(480, 720);
+        UIGraphicsBeginImageContextWithOptions(size2, NO, 0.0);
+        [previewImgView.image drawInRect:CGRectMake(0, 0, 480, 360)];
+        [previewImgView2.image drawInRect:CGRectMake(0, 360, 480, 360)];
+        composited_img = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
+        [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
 
@@ -337,7 +412,7 @@
     }
 }
 
--(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
+- (void)didTappedCancel {
     
     cameraFlag = NO;
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -519,11 +594,11 @@
 -(void)goCameraView{
     
     if (imgFlag) {
-        [self presentViewController:cameraView animated:YES completion:nil];
+        [self presentViewController:_cameraViewController animated:YES completion:nil];
     }
     else{
         frameImage.image = processor_bottom.effectImage;
-        [self presentViewController:cameraView animated:YES completion:nil];
+        [self presentViewController:_cameraViewController animated:YES completion:nil];
     }
 }
 

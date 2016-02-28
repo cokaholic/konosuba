@@ -7,6 +7,7 @@
 //
 
 // App Frame
+#define SCREEN_RECT [UIScreen mainScreen].bounds
 #define APPFRAME_RECT [UIScreen mainScreen].applicationFrame
 #define STATUSBAR_RECT [UIApplication sharedApplication].statusBarFrame
 

@@ -14,7 +14,7 @@
 
 @interface SecondViewController : KSBStepperViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate, UIActionSheetDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
 {
-    UIImagePickerController *cameraView;
+//    UIImagePickerController *cameraView;
     UIImagePickerController *libraryView;
     UIImageView *backgroundImgView;
     UIImageView *previewImgView;

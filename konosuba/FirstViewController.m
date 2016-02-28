@@ -52,8 +52,9 @@
 
 -(void)goCameraView{
     SecondViewController *svc = [[SecondViewController alloc]init];
-//    KSBConvertViewController *svc = [[KSBConvertViewController alloc] init];
-    [self.navigationController pushViewController:svc animated:YES];
+    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:svc];
+    nvc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentViewController:nvc animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning

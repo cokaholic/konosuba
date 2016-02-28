@@ -21,10 +21,8 @@
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
-//    KSBTopViewController *tvc = [[KSBTopViewController alloc] init];
     FirstViewController *fvc = [[FirstViewController alloc] init];
-    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:fvc];
-    self.window.rootViewController = nvc;
+    self.window.rootViewController = fvc;
     [self.window makeKeyAndVisible];
     
     return YES;
