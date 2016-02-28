@@ -148,13 +148,10 @@ static NSString * const kCellIdentifier = @"Cell";
     NSString *filePath = [_pathDocuments stringByAppendingPathComponent:[_bgmFilePaths objectAtIndex:indexPath.row]];
     NSURL *outURL = [NSURL fileURLWithPath:filePath];
     
-//    KSBBgmTrimViewController *trimViewController = [[KSBBgmTrimViewController alloc]init];
-//    trimViewController.fileURL = outURL;
+    KSBBgmTrimViewController *trimViewController = [[KSBBgmTrimViewController alloc]init];
+    trimViewController.fileURL = outURL;
     
-    // debug用
-    KSBConvertViewController *cvc = [[KSBConvertViewController alloc] init];
-    
-    [self.navigationController pushViewController:cvc animated:YES];
+    [self.navigationController pushViewController:trimViewController animated:YES];
 }
 
 - (void)openMusicLibrary {

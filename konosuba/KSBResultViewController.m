@@ -22,13 +22,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    
-    
-    AVPlayerItem *item = [self.player currentItem];
-    CMTime cmTime = item.asset.duration;
-    Float64 sec = CMTimeGetSeconds(cmTime);
-    NSLog(@"playerduration:%f", sec);
-    
     [self config];
     
     // `status`の変化を監視
@@ -41,8 +34,8 @@
 - (void)config {
     
     // 動画のURLを生成
-    // TODO変更: tmpMovie→final_video_file
-    NSString *fileName = @"tmpMovie"; // たつみんの変換
+//    NSString *fileName = @"final_video_file";
+    NSString *fileName = @"tmpMovie";
     NSString *destPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     NSString *path = [NSString stringWithFormat:@"%@/%@.mp4", destPath, fileName];
     NSURL *url = [NSURL fileURLWithPath:path];

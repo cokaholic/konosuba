@@ -41,7 +41,7 @@
     self.destPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     self.outputFileName = @"tmpMovie"; //日付名でもいいかも
     self.bgImage = [UIImage imageWithColor:[UIColor grayColor]];
-    _windowSize = CGSizeMake(400, APPFRAME_RECT.size.height); // 幅を400以上にしないと動画生成時におかしくなるので。。。
+    _windowSize = CGSizeMake(480, 320); // 幅を400以上にしないと動画生成時におかしくなるので。。。
     _actions = [NSMutableArray array];
 }
 
@@ -96,7 +96,7 @@
     
     for (KSBAnimationAction *action in _actions) {
     
-//        NSLog(@"loop");
+        //
         CGPoint imageViewOrigin = action.imageView.origin;
         double dt = action.duration.doubleValue / (double)_frameRate;
         double dx = (action.destValue.CGPointValue.x - imageViewOrigin.x) / (double)_frameRate;
@@ -108,12 +108,6 @@
         // 横拡大率
         double ds = (action.scale.doubleValue - 1) / (double)_frameRate;
         double newDs = 1;
-//        double s_width = [action getDestFrame].size.width / [action getSrcFrame].size.width;
-//        double s_height = [action getDestFrame].size.height / [action getSrcFrame].size.height;
-//        double ds_width = s_width - 1.0 / (double)_frameRate;
-//        double ds_height = s_height - 1.0 / (double)_frameRate;
-//        double newS_width = s_width;
-//        double newS_height = s_height;
         
         for (int i = 1; i * dt <= action.duration.doubleValue; i++) { // コマ数
             // 5
@@ -123,7 +117,6 @@
                 
                 // 画像拡大
                 newDs += ds;
-                
                 CGSize sz = CGSizeMake(action.imageView.image.size.width*newDs,
                                        action.imageView.image.size.height*newDs);
                 [action.imageView.image drawInRect:CGRectMake(0, 0, sz.width, sz.height)];
@@ -160,7 +153,6 @@
                 }
             }
         }
-        
     }
     // 完了処理
     // 1

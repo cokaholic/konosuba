@@ -8,7 +8,7 @@
 
 #import "FirstViewController.h"
 #import "SecondViewController.h"
-#import "KSBResultViewController.h"
+#import "KSBConvertViewController.h"
 
 @interface FirstViewController ()
 
@@ -52,6 +52,7 @@
 
 -(void)goCameraView{
     SecondViewController *svc = [[SecondViewController alloc]init];
+//    KSBConvertViewController *svc = [[KSBConvertViewController alloc] init];
     [self.navigationController pushViewController:svc animated:YES];
 }
 

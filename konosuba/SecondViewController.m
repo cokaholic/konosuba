@@ -32,27 +32,22 @@
     
     [self.headerStepperView setStepWithNumber:2];
     
-    processors = @[[[ImageProcessor alloc]initWithImageNamed:@"frame01.png"],
-                    [[ImageProcessor alloc]initWithImageNamed:@"frame02.png"],
-                    [[ImageProcessor alloc]initWithImageNamed:@"frame03.png"],
-                    [[ImageProcessor alloc]initWithImageNamed:@"frame04.png"],
-                    [[ImageProcessor alloc]initWithImageNamed:@"frame05.png"],
-                    [[ImageProcessor alloc]initWithImageNamed:@"frame06.png"],
-                    [[ImageProcessor alloc]initWithImageNamed:@"frame07.png"],
-                    [[ImageProcessor alloc]initWithImageNamed:@"frame08.png"],
-                    [[ImageProcessor alloc]initWithImageNamed:@"frame09.png"],
-                    [[ImageProcessor alloc]initWithImageNamed:@"frame10.png"]];
+    processors = @[[[ImageProcessor alloc] initWithImageNamed:@"1_1"],
+        [[ImageProcessor alloc] initWithImageNamed:@"1_2"]];
     
-    int a = arc4random()%10;
-    int b;
+//    int a = arc4random()%10;
+//    int b;
+    int a = 0;
+    int b = 1;
+    
     
     //非重複判定
-    for (; ; ) {
-        b = arc4random()%10;
-        if (a!=b) {
-            break;
-        }
-    }
+//    for (; ; ) {
+//        b = arc4random()%10;
+//        if (a!=b) {
+//            break;
+//        }
+//    }
     
     processor_top = processors[a];
     processor_bottom = processors[b];
@@ -69,7 +64,7 @@
     backgroundImgView.center = CGPointMake(self.view.bounds.size.width/2, self.view.bounds.size.height/2);
     [self.view addSubview:backgroundImgView];
     
-    previewImgView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 320, (self.view.bounds.size.height-100)/2)];
+    previewImgView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(APPFRAME_RECT), 240 * SCREEN_RECT_PERCENT)];
     previewImgView.contentMode = UIViewContentModeScaleAspectFit;
     previewImgView.backgroundColor = [UIColor clearColor];
     [self.view addSubview:previewImgView];
@@ -79,7 +74,7 @@
     [tapGesture addTarget:self action:@selector(tappedPreviewImgView)];
     [previewImgView addGestureRecognizer:tapGesture];
     
-    previewImgView2 = [[UIImageView alloc]initWithFrame:CGRectMake(0, (self.view.bounds.size.height-100)/2, 320, (self.view.bounds.size.height-100)/2)];
+    previewImgView2 = [[UIImageView alloc]initWithFrame:CGRectMake(0, 240 * SCREEN_RECT_PERCENT, CGRectGetWidth(APPFRAME_RECT), 240 * SCREEN_RECT_PERCENT)];
     previewImgView2.contentMode = UIViewContentModeScaleAspectFit;
     previewImgView2.backgroundColor = [UIColor clearColor];
     [self.view addSubview:previewImgView2];
@@ -271,14 +266,14 @@
     
     if (imgFlag) {
         
-        CGSize size = CGSizeMake(320, 284);
+        CGSize size = CGSizeMake(480, 320);
         UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
         
         if (libraryFlag) {
-            [getImage drawInRect:CGRectMake(0, 0, 320, 320)];
+            [getImage drawInRect:CGRectMake(0, 0, 480, 320)];
         }
         else{
-            [getImage drawInRect:CGRectMake(0, 0, 320, 427)];
+            [getImage drawInRect:CGRectMake(0, 0, 480, 320)];
         }
         
         previewImgView.image = UIGraphicsGetImageFromCurrentImageContext();
@@ -289,7 +284,7 @@
         filterImage1 = originalImage1;
         
         UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
-        [[processor_top process:previewImgView.image] drawInRect:CGRectMake(0, 0, 320, 284)];
+        [[processor_top process:previewImgView.image] drawInRect:CGRectMake(0, 0, 480, 320)];
         previewImgView.image = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
         
@@ -300,14 +295,14 @@
     }
     else{
         
-        CGSize size = CGSizeMake(320, 284);
+        CGSize size = CGSizeMake(480, 284);
         UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
         
         if (libraryFlag) {
-            [getImage drawInRect:CGRectMake(0, 0, 320, 320)];
+            [getImage drawInRect:CGRectMake(0, 0, 480, 320)];
         }
         else{
-            [getImage drawInRect:CGRectMake(0, 0, 320, 427)];
+            [getImage drawInRect:CGRectMake(0, 0, 480, 320)];
         }
         
         previewImgView2.image = UIGraphicsGetImageFromCurrentImageContext();
@@ -318,7 +313,7 @@
         filterImage2 = originalImage2;
         
         UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
-        [[processor_bottom process:previewImgView2.image] drawInRect:CGRectMake(0, 0, 320, 284)];
+        [[processor_bottom process:previewImgView2.image] drawInRect:CGRectMake(0, 0, 480, 320)];
         previewImgView2.image = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
         
@@ -330,10 +325,10 @@
         saveBtn.hidden = NO;
         previewImgView2.userInteractionEnabled = YES;
         
-        CGSize size2 = CGSizeMake(320, 568);
+        CGSize size2 = CGSizeMake(480, 640);
         UIGraphicsBeginImageContextWithOptions(size2, NO, 0.0);
-        [previewImgView.image drawInRect:CGRectMake(0, 0, 320, 284)];
-        [previewImgView2.image drawInRect:CGRectMake(0, 284, 320, 284)];
+        [previewImgView.image drawInRect:CGRectMake(0, 0, 480, 320)];
+        [previewImgView2.image drawInRect:CGRectMake(0, 320, 480, 320)];
         composited_img = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
         
@@ -418,9 +413,9 @@
             
             filterImage1 = originalImage1;
             
-            CGSize size = CGSizeMake(320, 284);
+            CGSize size = CGSizeMake(480, 320);
             UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
-            [[processor_top process:originalImage1] drawInRect:CGRectMake(0, 0, 320, 284)];
+            [[processor_top process:originalImage1] drawInRect:CGRectMake(0, 0, 480, 320)];
             previewImgView.image = UIGraphicsGetImageFromCurrentImageContext();
             UIGraphicsEndImageContext();
         }
@@ -428,15 +423,15 @@
             
             filterImage2 = originalImage2;
             
-            CGSize size = CGSizeMake(320, 284);
+            CGSize size = CGSizeMake(480, 320);
             UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
-            [[processor_bottom process:originalImage2] drawInRect:CGRectMake(0, 0, 320, 284)];
+            [[processor_bottom process:originalImage2] drawInRect:CGRectMake(0, 0, 480, 320)];
             previewImgView2.image = UIGraphicsGetImageFromCurrentImageContext();
             UIGraphicsEndImageContext();
             
-            CGSize size2 = CGSizeMake(320, 568);
+            CGSize size2 = CGSizeMake(480, 320);
             UIGraphicsBeginImageContextWithOptions(size2, NO, 0.0);
-            [previewImgView.image drawInRect:CGRectMake(0, 0, 320, 284)];
+            [previewImgView.image drawInRect:CGRectMake(0, 0, 480, 320)];
             [previewImgView2.image drawInRect:CGRectMake(0, 284, 320, 284)];
             composited_img = UIGraphicsGetImageFromCurrentImageContext();
             UIGraphicsEndImageContext();
@@ -474,9 +469,9 @@
         
         filterImage1 = [UIImage imageWithCGImage:cgImage];
         
-        CGSize size = CGSizeMake(320, 284);
+        CGSize size = CGSizeMake(480, 320);
         UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
-        [[processor_top process:filterImage1] drawInRect:CGRectMake(0, 0, 320, 284)];
+        [[processor_top process:filterImage1] drawInRect:CGRectMake(0, 0, 480, 320)];
         previewImgView.image = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
     }
@@ -484,16 +479,16 @@
         
         filterImage2 = [UIImage imageWithCGImage:cgImage];
         
-        CGSize size = CGSizeMake(320, 284);
+        CGSize size = CGSizeMake(480, 320);
         UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
-        [[processor_bottom process:filterImage2] drawInRect:CGRectMake(0, 0, 320, 284)];
+        [[processor_bottom process:filterImage2] drawInRect:CGRectMake(0, 0, 480, 320)];
         previewImgView2.image = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
         
-        CGSize size2 = CGSizeMake(320, 568);
+        CGSize size2 = CGSizeMake(480, 640);
         UIGraphicsBeginImageContextWithOptions(size2, NO, 0.0);
-        [previewImgView.image drawInRect:CGRectMake(0, 0, 320, 284)];
-        [previewImgView2.image drawInRect:CGRectMake(0, 284, 320, 284)];
+        [previewImgView.image drawInRect:CGRectMake(0, 0, 480, 320)];
+        [previewImgView2.image drawInRect:CGRectMake(0, 320, 480, 320)];
         composited_img = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
     }
@@ -808,9 +803,9 @@
         
         processor_top = processors[button.tag];
         
-        CGSize size = CGSizeMake(320, 284);
+        CGSize size = CGSizeMake(480, 320);
         UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
-        [[processors[button.tag] process:filterImage1] drawInRect:CGRectMake(0, 0, 320, 284)];
+        [[processors[button.tag] process:filterImage1] drawInRect:CGRectMake(0, 0, 480, 320)];
         previewImgView.image = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
     }
@@ -818,16 +813,16 @@
         
         processor_bottom = processors[button.tag];
         
-        CGSize size = CGSizeMake(320, 284);
+        CGSize size = CGSizeMake(480, 320);
         UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
-        [[processors[button.tag] process:filterImage2] drawInRect:CGRectMake(0, 0, 320, 284)];
+        [[processors[button.tag] process:filterImage2] drawInRect:CGRectMake(0, 0, 480, 320)];
         previewImgView2.image = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
         
-        CGSize size2 = CGSizeMake(320, 568);
+        CGSize size2 = CGSizeMake(480, 640);
         UIGraphicsBeginImageContextWithOptions(size2, NO, 0.0);
-        [previewImgView.image drawInRect:CGRectMake(0, 0, 320, 284)];
-        [previewImgView2.image drawInRect:CGRectMake(0, 284, 320, 284)];
+        [previewImgView.image drawInRect:CGRectMake(0, 0, 480, 320)];
+        [previewImgView2.image drawInRect:CGRectMake(0, 320, 480, 320)];
         composited_img = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
     }

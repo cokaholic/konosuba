@@ -13,7 +13,7 @@
 + (UIImage *)imageWithColor:(UIColor *)color {
 //    CGRect rect = CGRectMake(0, 0, 375, 667);
     CGRect rect = CGRectZero;
-    CGSize s = CGSizeMake(400, 666);
+    CGSize s = CGSizeMake(480, 320);
     rect.size = s;
     UIGraphicsBeginImageContext(rect.size);
     CGContextRef context = UIGraphicsGetCurrentContext();
