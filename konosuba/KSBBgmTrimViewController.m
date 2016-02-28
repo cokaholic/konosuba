@@ -12,6 +12,7 @@
 #import "KSBMovieManager.h"
 #import <AVFoundation/AVFoundation.h>
 #import <SVProgressHUD/SVProgressHUD.h>
+#import "KSBAVAssetManager.h"
 
 @interface KSBBgmTrimViewController () <RETrimControlDelegate>
 
@@ -152,6 +153,12 @@
 }
 
 - (void)showConvertViewController {
+    
+    [[KSBAVAssetManager sharedInstance] addAudioAssetWithFilePath:_fileURL.path
+                                                    withStartTime:_leftValue
+                                                     withPlayTime:_rightValue - _leftValue
+                                                   withInsertTime:0
+                                                       withVolume:0.5];
     
     [SVProgressHUD showWithStatus:@"動画生成中"];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
