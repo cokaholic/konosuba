@@ -181,12 +181,11 @@
 }
 
 - (void)showConvertViewController {
-    
     [SVProgressHUD showWithStatus:@"動画生成中"];
+    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         // time-consuming task
         dispatch_async(dispatch_get_main_queue(), ^{
-            [SVProgressHUD dismiss];
             
             KSBMovieManager *manager = [KSBMovieManager sharedInstance];
             
@@ -207,7 +206,7 @@
             CMTime cmTime1 = playerItem1.asset.duration;
             CMTime cmTime2 = playerItem2.asset.duration;
             Float64 sec1 = CMTimeGetSeconds(cmTime1);
-            Float64 sec2 = CMTimeGetSeconds(cmTime2);
+            Float64 sec2 = 5;//CMTimeGetSeconds(cmTime2);
 //            Float64 moveTime = 1;
             
             //動画生成条件
@@ -263,13 +262,13 @@
             //
             [assetManager merge:^(BOOL finished) {
                 if (finished) {
-                    [assetManager saveToLibrary:^(BOOL finished,NSError *error){
-                        if (finished) {
                             [SVProgressHUD dismiss];
                             KSBResultViewController *rvc = [[KSBResultViewController alloc] init];
                             [self.navigationController pushViewController:rvc animated:YES];
-                        }
-                    }];
+//                    [assetManager saveToLibrary:^(BOOL finished,NSError *error){
+//                        if (finished) {
+//                        }
+//                    }];
                 }
             }];
         });

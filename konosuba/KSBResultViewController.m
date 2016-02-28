@@ -53,20 +53,21 @@
     [self.view addSubview:self.playerView];
     
     // リプレイボタン
-    CGRect repBtnFrm = CGRectMake(kDefaultMargin, -200 + playerViewFrame.size.height + kStepperBottomHeight + kDefaultMargin, self.view.size.width - kDefaultMargin * 2, 44);
+    CGRect repBtnFrm = CGRectMake(kDefaultMargin, playerViewFrame.size.height + kStepperBottomHeight + kDefaultMargin, self.view.size.width - kDefaultMargin * 2, 44);
     UIButton *repBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     repBtn.frame = repBtnFrm;
+    repBtn.backgroundColor = [UIColor greenColor];
     [repBtn setTitle:@"リプレイ" forState:UIControlStateNormal];
     [repBtn addTarget:self action:@selector(replay) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:repBtn];
     
     // 戻るボタン
-    CGRect homeBtnFrm = CGRectMake(kDefaultMargin, -200 + playerViewFrame.size.height + kStepperBottomHeight * 2 + kDefaultMargin * 2, self.view.size.width - kDefaultMargin * 2, 44);
-    UIButton *homeBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    repBtn.frame = homeBtnFrm;
-    [homeBtn setTitle:@"ホームに戻る" forState:UIControlStateNormal];
-    [homeBtn addTarget:self action:@selector(backHome) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:homeBtn];
+//    CGRect homeBtnFrm = CGRectMake(kDefaultMargin, -100 + playerViewFrame.size.height + kStepperBottomHeight + kDefaultMargin , self.view.size.width - kDefaultMargin * 2, 44);
+//    UIButton *homeBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+//    repBtn.frame = homeBtnFrm;
+//    [homeBtn setTitle:@"ホームに戻る" forState:UIControlStateNormal];
+//    [homeBtn addTarget:self action:@selector(backHome) forControlEvents:UIControlEventTouchUpInside];
+//    [self.view addSubview:homeBtn];
 }
 
 - (void)configTitleLabel {

@@ -153,7 +153,7 @@ const float kMaxVolumeParameter = 2.0;
     if ([[NSFileManager defaultManager] fileExistsAtPath:outputFilePath])
         [[NSFileManager defaultManager] removeItemAtPath:outputFilePath error:nil];
     
-    AVAssetExportSession* _assetExport = [[AVAssetExportSession alloc] initWithAsset:_mixComposition presetName:AVAssetExportPresetHighestQuality];
+    AVAssetExportSession* _assetExport = [[AVAssetExportSession alloc] initWithAsset:_mixComposition presetName:AVAssetExportPresetMediumQuality];
     _assetExport.outputFileType = @"com.apple.quicktime-movie";
     _assetExport.outputURL = outputFileUrl;
     

@@ -316,7 +316,7 @@
         
         cameraFlag = NO;
         imgFlag = NO;
-        previewImgView.userInteractionEnabled = YES;
+        previewImgView.userInteractionEnabled = NO;
         [self dismissViewControllerAnimated:YES completion:nil];
     }
     else{
@@ -350,7 +350,7 @@
         //        facebookBtn.hidden = NO;
         saveBtn.hidden = NO;
         cameraBtn.hidden = YES;
-        previewImgView2.userInteractionEnabled = YES;
+        previewImgView2.userInteractionEnabled = NO;
         
         CGSize size2 = CGSizeMake(480, 720);
         UIGraphicsBeginImageContextWithOptions(size2, NO, 0.0);
@@ -399,7 +399,7 @@
         
         cameraFlag = NO;
         imgFlag = NO;
-        previewImgView.userInteractionEnabled = YES;
+        previewImgView.userInteractionEnabled = NO;
         [self dismissViewControllerAnimated:YES completion:nil];
     }
     else{
@@ -433,7 +433,7 @@
 //        facebookBtn.hidden = NO;
         saveBtn.hidden = NO;
         cameraBtn.hidden = YES;
-        previewImgView2.userInteractionEnabled = YES;
+        previewImgView2.userInteractionEnabled = NO;
         
         CGSize size2 = CGSizeMake(480, 720);
         UIGraphicsBeginImageContextWithOptions(size2, NO, 0.0);
@@ -809,8 +809,8 @@
                          completion:^(BOOL finished) {
                              
                              editingFlag1 = NO;
-                             previewImgView.userInteractionEnabled = YES;
-                             if (previewImgView2.image!=nil)previewImgView2.userInteractionEnabled = YES;
+                             previewImgView.userInteractionEnabled = NO;
+                             if (previewImgView2.image!=nil)previewImgView2.userInteractionEnabled = NO;
                          }];
 
     }
@@ -834,7 +834,7 @@
                          completion:^(BOOL finished) {
                              
                              editingFlag1 = YES;
-                             previewImgView.userInteractionEnabled = YES;
+                             previewImgView.userInteractionEnabled = NO;
                          }];
     }
 }
@@ -876,8 +876,8 @@
                          completion:^(BOOL finished) {
                              
                              editingFlag2 = NO;
-                             previewImgView.userInteractionEnabled = YES;
-                             previewImgView2.userInteractionEnabled = YES;
+                             previewImgView.userInteractionEnabled = NO;
+                             previewImgView2.userInteractionEnabled = NO;
                          }];
     }
     else{
@@ -902,7 +902,7 @@
                          completion:^(BOOL finished) {
                              
                              editingFlag2 = YES;
-                             previewImgView2.userInteractionEnabled = YES;
+                             previewImgView2.userInteractionEnabled = NO;
                          }];
     }
 }
