@@ -19,6 +19,7 @@
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UIButton *playButton;
 @property (nonatomic, strong) UIButton *doneButton;
+@property (nonatomic, strong) UIButton *skipButton;
 @property (nonatomic, strong) UIScrollView *trimBaseScrollView;
 @property (nonatomic, strong) RETrimControl *trimControl;
 @property (nonatomic, strong) AVPlayer *player;
@@ -115,6 +116,20 @@
     [self.view addSubview:_playButton];
 }
 
+- (void)configSkipButton {
+    
+    _skipButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    _skipButton.frame = CGRectMake(kDefaultMargin, CGRectGetHeight(APPFRAME_RECT) - 80 - kDefaultMargin, _titleLabel.width - kDefaultMargin*2, 40);
+    _skipButton.backgroundColor = [UIColor yellowColor];
+    [_skipButton setTitle:@"BGMを入れない" forState:UIControlStateNormal];
+    _skipButton.tintColor = [UIColor colorWithCSS:kColorCodeWhite];
+    _skipButton.titleLabel.font = DEFAULT_FONT_BOLD(15);
+    [_skipButton addTarget:self
+                    action:@selector(showConvertViewController)
+          forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_skipButton];
+}
+
 - (void)configDoneButton {
     
     _doneButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -124,7 +139,7 @@
     _doneButton.tintColor = [UIColor colorWithCSS:kColorCodeWhite];
     _doneButton.titleLabel.font = DEFAULT_FONT_BOLD(15);
     [_doneButton addTarget:self
-                    action:@selector(showConvertViewController)
+                    action:@selector(addBGM)
           forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_doneButton];
 }
@@ -152,13 +167,18 @@
     _isPlaying = !_isPlaying;
 }
 
-- (void)showConvertViewController {
+- (void)addBGM {
     
     [[KSBAVAssetManager sharedInstance] addAudioAssetWithFilePath:_fileURL.path
                                                     withStartTime:_leftValue
                                                      withPlayTime:_rightValue - _leftValue
                                                    withInsertTime:0
                                                        withVolume:0.5];
+    
+    [self showConvertViewController];
+}
+
+- (void)showConvertViewController {
     
     [SVProgressHUD showWithStatus:@"動画生成中"];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{

@@ -14,6 +14,7 @@
 
 @property (nonatomic, strong) AVPlayerView *playerView;
 @property (nonatomic, strong) AVPlayer *player;
+
 @end
 
 @implementation KSBResultViewController
