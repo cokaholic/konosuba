@@ -78,6 +78,12 @@
 		9F20D8A71C81DAFC00A41B90 /* RETrimPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F20D8A41C81DAFC00A41B90 /* RETrimPopover.m */; };
 		9F20D8AC1C8213E900A41B90 /* TSLibraryImport.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F20D8AB1C8213E900A41B90 /* TSLibraryImport.m */; };
 		9F20D8B01C8223D900A41B90 /* KSBBgmTrimViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F20D8AF1C8223D900A41B90 /* KSBBgmTrimViewController.m */; };
+		9F20D8B21C82A2AB00A41B90 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F20D8B11C82A2AB00A41B90 /* CoreImage.framework */; };
+		9F20D8B41C82A2BA00A41B90 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F20D8B31C82A2BA00A41B90 /* ImageIO.framework */; };
+		9F20D8B81C82A2F300A41B90 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F20D8B71C82A2F300A41B90 /* CameraViewController.m */; };
+		9F20D8BD1C82AEB100A41B90 /* flash.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F20D8BA1C82AEB100A41B90 /* flash.png */; };
+		9F20D8BE1C82AEB100A41B90 /* front.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F20D8BB1C82AEB100A41B90 /* front.png */; };
+		9F20D8BF1C82AEB100A41B90 /* shutter.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F20D8BC1C82AEB100A41B90 /* shutter.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -200,6 +206,13 @@
 		9F20D8AB1C8213E900A41B90 /* TSLibraryImport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSLibraryImport.m; sourceTree = "<group>"; };
 		9F20D8AE1C8223D900A41B90 /* KSBBgmTrimViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSBBgmTrimViewController.h; sourceTree = "<group>"; };
 		9F20D8AF1C8223D900A41B90 /* KSBBgmTrimViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSBBgmTrimViewController.m; sourceTree = "<group>"; };
+		9F20D8B11C82A2AB00A41B90 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		9F20D8B31C82A2BA00A41B90 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		9F20D8B61C82A2F300A41B90 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
+		9F20D8B71C82A2F300A41B90 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
+		9F20D8BA1C82AEB100A41B90 /* flash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flash.png; sourceTree = "<group>"; };
+		9F20D8BB1C82AEB100A41B90 /* front.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = front.png; sourceTree = "<group>"; };
+		9F20D8BC1C82AEB100A41B90 /* shutter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shutter.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +220,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F20D8B41C82A2BA00A41B90 /* ImageIO.framework in Frameworks */,
+				9F20D8B21C82A2AB00A41B90 /* CoreImage.framework in Frameworks */,
 				9F20D8961C819CE300A41B90 /* AVFoundation.framework in Frameworks */,
 				9F20D8941C819CD500A41B90 /* AssetsLibrary.framework in Frameworks */,
 				9F20D8921C819CCB00A41B90 /* MediaPlayer.framework in Frameworks */,
@@ -261,6 +276,7 @@
 		70DD4CB41C81D1E900960D58 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				9F20D8B91C82AEA500A41B90 /* Camera */,
 				70DD4CB71C81D22100960D58 /* Frame */,
 				70DD4CB61C81D21800960D58 /* Other */,
 				70DD4CB51C81D20500960D58 /* Button */,
@@ -392,6 +408,8 @@
 		7F763701D5E294E2B197619E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9F20D8B31C82A2BA00A41B90 /* ImageIO.framework */,
+				9F20D8B11C82A2AB00A41B90 /* CoreImage.framework */,
 				9F20D8951C819CE300A41B90 /* AVFoundation.framework */,
 				9F20D8931C819CD500A41B90 /* AssetsLibrary.framework */,
 				9F20D8911C819CCA00A41B90 /* MediaPlayer.framework */,
@@ -476,6 +494,7 @@
 		9F20D87D1C81635100A41B90 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				9F20D8B51C82A2C100A41B90 /* KSBCameraViewController */,
 				9F20D8AD1C82238600A41B90 /* KSBBgmTrimViewController */,
 				70DD4D031C822C0600960D58 /* KSBResultViewController */,
 				70DD4CFD1C821B0F00960D58 /* KSBConvertViewController */,
@@ -610,6 +629,25 @@
 			name = KSBBgmTrimViewController;
 			sourceTree = "<group>";
 		};
+		9F20D8B51C82A2C100A41B90 /* KSBCameraViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9F20D8B61C82A2F300A41B90 /* CameraViewController.h */,
+				9F20D8B71C82A2F300A41B90 /* CameraViewController.m */,
+			);
+			name = KSBCameraViewController;
+			sourceTree = "<group>";
+		};
+		9F20D8B91C82AEA500A41B90 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				9F20D8BA1C82AEB100A41B90 /* flash.png */,
+				9F20D8BB1C82AEB100A41B90 /* front.png */,
+				9F20D8BC1C82AEB100A41B90 /* shutter.png */,
+			);
+			name = Camera;
+			sourceTree = "<group>";
+		};
 		F55F1BA17371D8C6E3FBEC14 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -729,6 +767,7 @@
 				70936A5D1C8289960020E922 /* 3_1.png in Resources */,
 				9F20D8A51C81DAFC00A41B90 /* RETrimControl.bundle in Resources */,
 				70DD4CDF1C81D25300960D58 /* frame09.png in Resources */,
+				9F20D8BD1C82AEB100A41B90 /* flash.png in Resources */,
 				9F20D8541C8144A900A41B90 /* LaunchScreen.storyboard in Resources */,
 				70DD4CDC1C81D25300960D58 /* frame07@2x.png in Resources */,
 				70DD4D181C82747400960D58 /* 3_1.mp3 in Resources */,
@@ -737,6 +776,7 @@
 				70DD4CEB1C81D27500960D58 /* facebook.png in Resources */,
 				70DD4CCE1C81D25200960D58 /* frame10@2x.png in Resources */,
 				70DD4CDA1C81D25300960D58 /* frame06@2x.png in Resources */,
+				9F20D8BF1C82AEB100A41B90 /* shutter.png in Resources */,
 				70DD4CD31C81D25300960D58 /* frame03.png in Resources */,
 				70936A5A1C8289960020E922 /* 1_1.png in Resources */,
 				70DD4CCC1C81D25200960D58 /* frame09@2x.png in Resources */,
@@ -770,6 +810,7 @@
 				70936A5C1C8289960020E922 /* 2_2.png in Resources */,
 				70DD4CDB1C81D25300960D58 /* frame07.png in Resources */,
 				70DD4CD91C81D25300960D58 /* frame06.png in Resources */,
+				9F20D8BE1C82AEB100A41B90 /* front.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -859,6 +900,7 @@
 				9F20D88C1C8165E800A41B90 /* Const.m in Sources */,
 				70DD4CF31C81D2DF00960D58 /* FirstViewController.m in Sources */,
 				705EDEF41C8171CF0021DD71 /* KSBBgmSettingViewController.m in Sources */,
+				9F20D8B81C82A2F300A41B90 /* CameraViewController.m in Sources */,
 				9F20D8791C8144C600A41B90 /* KSBTopViewController.m in Sources */,
 				9F20D8B01C8223D900A41B90 /* KSBBgmTrimViewController.m in Sources */,
 				70DD4CAD1C81D0A500960D58 /* KSBMovieManager.m in Sources */,
