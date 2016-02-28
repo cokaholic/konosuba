@@ -35,7 +35,7 @@
 {
     [super viewDidLoad];
     
-    [self.headerStepperView setStepWithNumber:2];
+    [self.headerStepperView setStepWithNumber:1];
     
     processors = @[[[ImageProcessor alloc] initWithImageNamed:@"1_1"],
                    [[ImageProcessor alloc] initWithImageNamed:@"2_1"],
@@ -105,7 +105,7 @@
     [previewImgView2 addGestureRecognizer:tapGesture2];
     
     backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    backBtn.frame = CGRectMake(self.view.frame.size.width/4*3,self.view.bounds.size.height-100,self.view.frame.size.width/4,50);
+    backBtn.frame = CGRectMake(self.view.frame.size.width/4*3,CGRectGetHeight(SCREEN_RECT) - 50,self.view.frame.size.width/4,50);
     [backBtn setBackgroundImage:[UIImage imageNamed:@"back.png"] forState:UIControlStateNormal];
     [backBtn addTarget:self
                 action:@selector(backToTop)
@@ -113,7 +113,7 @@
     [self.view addSubview:backBtn];
     
     cameraBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    cameraBtn.frame = CGRectMake(0,self.view.bounds.size.height-100,self.view.frame.size.width/4*3,50);
+    cameraBtn.frame = CGRectMake(0,CGRectGetHeight(SCREEN_RECT) - 50,self.view.frame.size.width/4*3,50);
     [cameraBtn setBackgroundImage:[UIImage imageNamed:@"camera.png"] forState:UIControlStateNormal];
     [cameraBtn addTarget:self
                   action:@selector(cameraOrLibrary)
@@ -138,9 +138,12 @@
 //    [self.view addSubview:facebookBtn];
 //    facebookBtn.hidden = YES;
     
-    saveBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    saveBtn.frame = CGRectMake(self.view.bounds.size.width/4*2, self.view.bounds.size.height-100, self.view.bounds.size.width/4, 50);
-    [saveBtn setBackgroundImage:[UIImage imageNamed:@"save.png"] forState:UIControlStateNormal];
+    saveBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    saveBtn.frame = CGRectMake(0, CGRectGetHeight(SCREEN_RECT) - 50, self.view.frame.size.width/4*3, 50);
+    saveBtn.backgroundColor = [UIColor greenColor];
+    saveBtn.tintColor = [UIColor colorWithCSS:kColorCodeWhite];
+    saveBtn.titleLabel.font = DEFAULT_FONT_BOLD(15);
+    [saveBtn setTitle:@"この２コマに決定！" forState:UIControlStateNormal];
     [saveBtn addTarget:self
                 action:@selector(saveImageToPhotosAlbum)
           forControlEvents:UIControlEventTouchUpInside];
@@ -309,6 +312,8 @@
         previewImgView.image = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
         
+        [self.headerStepperView setStepWithNumber:2];
+        
         cameraFlag = NO;
         imgFlag = NO;
         previewImgView.userInteractionEnabled = YES;
@@ -389,6 +394,8 @@
         [[processor_top process:previewImgView.image] drawInRect:CGRectMake(0, 0, 480, 360)];
         previewImgView.image = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
+        
+        [self.headerStepperView setStepWithNumber:2];
         
         cameraFlag = NO;
         imgFlag = NO;
