@@ -14,6 +14,8 @@
 
 @property (nonatomic, strong) AVPlayerView *playerView;
 @property (nonatomic, strong) AVPlayer *player;
+@property (nonatomic, strong) UILabel *titleLabel;
+
 @end
 
 @implementation KSBResultViewController
@@ -21,8 +23,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self.headerStepperView setStepWithNumber:5];
     
     [self config];
+    [self configTitleLabel];
     
     // `status`の変化を監視
     [self.player addObserver:self
@@ -43,24 +47,46 @@
     self.player = [[AVPlayer alloc] initWithURL:url];
     
     // viewのlayerに`AVPlayer`のインスタンスをセット
-//    CGRect playerViewFrame = CGRectMake(kDefaultMargin, kStepperBottomHeight, self.view.size.width - kDefaultMargin * 2, self.view.size.height / 2.0);
     CGRect playerViewFrame = CGRectMake(kDefaultMargin, kStepperBottomHeight, self.view.size.width - kDefaultMargin * 2, self.view.size.height / 2.0);
     self.playerView = [[AVPlayerView alloc] initWithFrame:playerViewFrame];
     [(AVPlayerLayer*)self.playerView.layer setPlayer:self.player];
     [self.view addSubview:self.playerView];
     
     // リプレイボタン
-    CGRect repBtnFrm = CGRectMake(kDefaultMargin, playerViewFrame.size.height + kStepperBottomHeight + kDefaultMargin, self.view.size.width - kDefaultMargin * 2, 44);
+    CGRect repBtnFrm = CGRectMake(kDefaultMargin, -100 + playerViewFrame.size.height + kStepperBottomHeight + kDefaultMargin, self.view.size.width - kDefaultMargin * 2, 44);
     UIButton *repBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     repBtn.frame = repBtnFrm;
     [repBtn setTitle:@"リプレイ" forState:UIControlStateNormal];
     [repBtn addTarget:self action:@selector(replay) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:repBtn];
+    
+    // 戻るボタン
+    CGRect homeBtnFrm = CGRectMake(kDefaultMargin, -100 + playerViewFrame.size.height + kStepperBottomHeight * 2 + kDefaultMargin * 2, self.view.size.width - kDefaultMargin * 2, 44);
+    UIButton *homeBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    repBtn.frame = homeBtnFrm;
+    [homeBtn setTitle:@"ホームに戻る" forState:UIControlStateNormal];
+    [homeBtn addTarget:self action:@selector(backHome) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:homeBtn];
+}
+
+- (void)configTitleLabel {
+    
+    _titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, kStepperBottomHeight, CGRectGetWidth(APPFRAME_RECT), 40)];
+    _titleLabel.backgroundColor = [UIColor clearColor];
+    _titleLabel.textColor = [UIColor blackColor];
+    _titleLabel.textAlignment = NSTextAlignmentCenter;
+    _titleLabel.font = DEFAULT_FONT_BOLD(20);
+    _titleLabel.text = @"作成された結果";
+    [self.view addSubview:_titleLabel];
 }
 
 - (void)replay {
     [self.player seekToTime:kCMTimeZero];
     [self.player play];
+}
+
+- (void)backHome {
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
 // `status`の値を監視して、再生可能になったら再生

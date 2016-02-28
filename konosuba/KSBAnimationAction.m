@@ -15,7 +15,7 @@
 }
 
 - (id)initWithImageView:(UIImageView *)imageView
-                 duration:(NSNumber *)duration
+                 duration:(Float64)duration
                 destValue:(NSValue *)destValue
                   scale:(NSNumber *)scale {
     if (self != nil) {

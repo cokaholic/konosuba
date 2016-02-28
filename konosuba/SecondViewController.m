@@ -10,6 +10,7 @@
 #import "SecondViewController.h"
 #import "KSBMovieManager.h"
 #import "KSBBgmSettingViewController.h"
+#import "KSBMovieManager.h"
 #import "CameraViewController.h"
 
 @interface SecondViewController () <KSBCameraViewControllerDelegate>
@@ -37,12 +38,25 @@
     [self.headerStepperView setStepWithNumber:2];
     
     processors = @[[[ImageProcessor alloc] initWithImageNamed:@"1_1"],
-        [[ImageProcessor alloc] initWithImageNamed:@"1_2"]];
+                   [[ImageProcessor alloc] initWithImageNamed:@"2_1"],
+                   [[ImageProcessor alloc] initWithImageNamed:@"3_1"],
+                   [[ImageProcessor alloc] initWithImageNamed:@"1_2"],
+                   [[ImageProcessor alloc] initWithImageNamed:@"2_2"],
+                   [[ImageProcessor alloc] initWithImageNamed:@"3_2"]];
     
-//    int a = arc4random()%10;
-//    int b;
-    int a = 0;
-    int b = 1;
+    int a = arc4random()%3;
+    int b;
+    if (a == 0) b = 3;
+    else if (a == 1) b = 4;
+    else if (a == 2) b = 5;
+    KSBMovieManager *manager = [KSBMovieManager sharedInstance];
+    manager.a = a;
+    manager.b = b;
+    
+    
+    
+//    int a = 0;
+//    int b = 1;
     
     
     //非重複判定
@@ -166,12 +180,25 @@
         frameImages[i].frame = CGRectMake(10+(i*160), (previewImgView.frame.size.height-133)/2, 150, 133);
         frameImages[i].backgroundColor = [UIColor blackColor];
         frameImages[i].tag = i;
-        if (i==9) {
-            [frameImages[i] setBackgroundImage:[UIImage imageNamed:[NSString stringWithFormat:@"frame%d.png",i+1]] forState:UIControlStateNormal];
+        if (i==0) {
+            [frameImages[i] setBackgroundImage:[UIImage imageNamed:@"1-1.png"] forState:UIControlStateNormal];
         }
-        else{
-            [frameImages[i] setBackgroundImage:[UIImage imageNamed:[NSString stringWithFormat:@"frame0%d.png",i+1]] forState:UIControlStateNormal];
+        if (i==1) {
+            [frameImages[i] setBackgroundImage:[UIImage imageNamed:@"1-2.png"] forState:UIControlStateNormal];
         }
+        if (i==2) {
+            [frameImages[i] setBackgroundImage:[UIImage imageNamed:@"2-1.png"] forState:UIControlStateNormal];
+        }
+        if (i==3) {
+            [frameImages[i] setBackgroundImage:[UIImage imageNamed:@"2-2.png"] forState:UIControlStateNormal];
+        }
+        if (i==4) {
+            [frameImages[i] setBackgroundImage:[UIImage imageNamed:@"3-1.png"] forState:UIControlStateNormal];
+        }
+        if (i==5) {
+            [frameImages[i] setBackgroundImage:[UIImage imageNamed:@"3-2.png"] forState:UIControlStateNormal];
+        }
+             
         [frameImages[i] addTarget:self
                            action:@selector(selectedFrame:)
                  forControlEvents:UIControlEventTouchUpInside];

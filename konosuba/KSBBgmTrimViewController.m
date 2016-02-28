@@ -159,9 +159,17 @@
         // time-consuming task
         dispatch_async(dispatch_get_main_queue(), ^{
             [SVProgressHUD dismiss];
+            
+            KSBMovieManager *manager = [KSBMovieManager sharedInstance];
+            
             // 動画の長さを取得
-            NSString *fileName1 = @"1_1";
-            NSString *fileName2 = @"1_2";
+            NSString *fileName1;// = @"1_1";
+            NSString *fileName2;// = @"1_2";
+            
+            if (manager.a==0) {fileName1 = @"1_1"; fileName2 = @"1_2";}
+            if (manager.a==1) {fileName1 = @"2_1"; fileName2 = @"2_2";}
+            if (manager.a==2) {fileName1 = @"2_1"; fileName2 = @"3_2";}
+            
             NSURL *v1Path = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:fileName1 ofType:@"mp3"]];
             NSURL *v2Path = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:fileName2 ofType:@"mp3"]];
             AVAsset *asset1 = [AVAsset assetWithURL:v1Path];
@@ -172,22 +180,22 @@
             CMTime cmTime2 = playerItem2.asset.duration;
             Float64 sec1 = CMTimeGetSeconds(cmTime1);
             Float64 sec2 = CMTimeGetSeconds(cmTime2);
-            Float64 moveTime = 1;
+//            Float64 moveTime = 1;
             
             //動画生成条件
-            KSBMovieManager *manager = [KSBMovieManager sharedInstance];
             
             UIImageView *imgView1 = [[UIImageView alloc] initWithImage:manager.image];
             UIImageView *imgView2 = [[UIImageView alloc] initWithImage:manager.image.copy];
-            UIImageView *imgView3 = [[UIImageView alloc] initWithImage:manager.image.copy];
+//            UIImageView *imgView3 = [[UIImageView alloc] initWithImage:manager.image.copy];
             CGRect d = imgView1.frame;
             d.origin.y -= 360;
             imgView2.frame = d;
+            Float64 sec = 1;
             
             
-            KSBAnimationAction *action1 = [[KSBAnimationAction alloc] initWithImageView:imgView1 duration:@(sec1 + 3) destValue:[NSValue valueWithCGPoint:imgView1.origin] scale:@(1)];
-            KSBAnimationAction *action2 = [[KSBAnimationAction alloc] initWithImageView:imgView1 duration:@(3) destValue:[NSValue valueWithCGPoint:d.origin] scale:@(1)];
-            KSBAnimationAction *action3 = [[KSBAnimationAction alloc] initWithImageView:imgView2 duration:@(sec2) destValue:[NSValue valueWithCGPoint:d.origin] scale:@(1)];
+            KSBAnimationAction *action1 = [[KSBAnimationAction alloc] initWithImageView:imgView1 duration:sec1 destValue:[NSValue valueWithCGPoint:imgView1.origin] scale:@(1)];
+            KSBAnimationAction *action2 = [[KSBAnimationAction alloc] initWithImageView:imgView1 duration:sec destValue:[NSValue valueWithCGPoint:d.origin] scale:@(1)];
+            KSBAnimationAction *action3 = [[KSBAnimationAction alloc] initWithImageView:imgView2 duration:sec2 destValue:[NSValue valueWithCGPoint:d.origin] scale:@(1)];
             
             [manager addAnimationAction:action1];
             [manager addAnimationAction:action2];

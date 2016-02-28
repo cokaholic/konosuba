@@ -98,7 +98,7 @@
     
         //
         CGPoint imageViewOrigin = action.imageView.origin;
-        double dt = action.duration.doubleValue / (double)_frameRate;
+        double dt = action.duration / (double)_frameRate;
         double dx = (action.destValue.CGPointValue.x - imageViewOrigin.x) / (double)_frameRate;
         double dy = (action.destValue.CGPointValue.y - imageViewOrigin.y) / (double)_frameRate;
         CGFloat newX = imageViewOrigin.x;
@@ -109,7 +109,7 @@
         double ds = (action.scale.doubleValue - 1) / (double)_frameRate;
         double newDs = 1;
         
-        for (int i = 1; i * dt <= action.duration.doubleValue; i++) { // コマ数
+        for (int i = 1; (Float64)(i * 1.0/_frameRate) <= action.duration; i++) { // コマ数
             // 5
             @autoreleasepool {
                 
@@ -135,7 +135,7 @@
                 BOOL result = NO;
                 if (adaptor.assetWriterInput.readyForMoreMediaData)
                 {
-                    CMTime frameTime = CMTimeMake(frameCount  , _frameRate);
+                    CMTime frameTime = CMTimeMake(frameCount , _frameRate);
                     result = [adaptor appendPixelBuffer:buffer withPresentationTime:frameTime];
                     
                     [NSThread sleepForTimeInterval:0.05];

@@ -9,15 +9,17 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface KSBAnimationAction : NSObject
+@interface KSBAnimationAction : NSObject {
+
+}
 
 @property(nonatomic, retain) UIImageView *imageView;
-@property(nonatomic, retain) NSNumber *duration;
+@property(nonatomic, assign) Float64 duration;
 @property(nonatomic, retain) NSValue *destValue;
 @property(nonatomic, retain) NSNumber *scale;
 
 - (id)initWithImageView:(UIImageView *)imageView
-                 duration:(NSNumber *)duration
+                 duration:(Float64)duration
                 destValue:(NSValue *)destValue
                     scale:(NSNumber *)scale;
 
