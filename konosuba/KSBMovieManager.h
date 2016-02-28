@@ -17,6 +17,9 @@
 
 - (CGSize)getWindowSize;
 
+@property (nonatomic, assign) int a; //1枚目シーン
+@property (nonatomic, assign) int b; //2枚目シーン
+
 /**
  *  背景画像
  */

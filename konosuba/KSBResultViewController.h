@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import "KSBStepperViewController.h"
 
-@interface KSBResultViewController : UIViewController
+@interface KSBResultViewController : KSBStepperViewController
 
 @end
