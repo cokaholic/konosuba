@@ -53,7 +53,7 @@
     [self.view addSubview:self.playerView];
     
     // リプレイボタン
-    CGRect repBtnFrm = CGRectMake(kDefaultMargin, -100 + playerViewFrame.size.height + kStepperBottomHeight + kDefaultMargin, self.view.size.width - kDefaultMargin * 2, 44);
+    CGRect repBtnFrm = CGRectMake(kDefaultMargin, -200 + playerViewFrame.size.height + kStepperBottomHeight + kDefaultMargin, self.view.size.width - kDefaultMargin * 2, 44);
     UIButton *repBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     repBtn.frame = repBtnFrm;
     [repBtn setTitle:@"リプレイ" forState:UIControlStateNormal];
@@ -61,7 +61,7 @@
     [self.view addSubview:repBtn];
     
     // 戻るボタン
-    CGRect homeBtnFrm = CGRectMake(kDefaultMargin, -100 + playerViewFrame.size.height + kStepperBottomHeight * 2 + kDefaultMargin * 2, self.view.size.width - kDefaultMargin * 2, 44);
+    CGRect homeBtnFrm = CGRectMake(kDefaultMargin, -200 + playerViewFrame.size.height + kStepperBottomHeight * 2 + kDefaultMargin * 2, self.view.size.width - kDefaultMargin * 2, 44);
     UIButton *homeBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     repBtn.frame = homeBtnFrm;
     [homeBtn setTitle:@"ホームに戻る" forState:UIControlStateNormal];

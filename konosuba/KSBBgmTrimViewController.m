@@ -168,7 +168,7 @@
             
             if (manager.a==0) {fileName1 = @"1_1"; fileName2 = @"1_2";}
             if (manager.a==1) {fileName1 = @"2_1"; fileName2 = @"2_2";}
-            if (manager.a==2) {fileName1 = @"2_1"; fileName2 = @"3_2";}
+            if (manager.a==2) {fileName1 = @"3_1"; fileName2 = @"3_2";}
             
             NSURL *v1Path = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:fileName1 ofType:@"mp3"]];
             NSURL *v2Path = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:fileName2 ofType:@"mp3"]];
