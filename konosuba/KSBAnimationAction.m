@@ -27,28 +27,36 @@
     return self;
 }
 
+// 使えない
 - (UIImageView *)afterImageView {
     CGRect newRect = self.imageView.frame;
     newRect.origin = self.destValue.CGPointValue;
     
     // UIImageのりサイズ
-    UIImage *img_af;
-    float widthPer = self.scale.doubleValue;
-    float heightPer = self.scale.doubleValue;
-    CGSize resize = CGSizeMake(self.imageView.image.size.width * widthPer, self.imageView.image.size.height * heightPer);
-    UIGraphicsBeginImageContext(resize);
-    [self.imageView.image drawInRect:CGRectMake(0, 0, resize.width, resize.height)];
-    img_af = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
+//    UIImage *img_af;
+//    float widthPer = self.scale.doubleValue;
+//    float heightPer = self.scale.doubleValue;
+//    
+//    CGRect newRect = CGRectZero;
+//    newRect.origin = self.destValue.CGPointValue;
+//    newRect.size = CGSizeMake(self.imageView.size.width * widthPer, self.imageView.size.height * heightPer);
+    self.imageView.frame = newRect;
+//    CGSize resize = CGSizeMake(self.imageView.size.width * widthPer, self.imageView.size.height * heightPer);
+//    UIGraphicsBeginImageContext(resize);
+//    [self.imageView.image drawInRect:CGRectMake(0, 0, resize.width, resize.height)];
+//    img_af = UIGraphicsGetImageFromCurrentImageContext();
+//    UIGraphicsEndImageContext();
     
-    UIImageView *newImageView = [[UIImageView alloc] initWithImage:img_af];
-    CGRect tmpRect = newImageView.frame;
-    tmpRect.origin = newRect.origin;
-    newImageView.frame = tmpRect;
+//    UIImageView *newImageView = [[UIImageView alloc] initWithImage:img_af];
+//    UIImageView *newImageView = [[UIImageView alloc] initWithFrame:newRect];
+//    newImageView.image = self.imageView.image;
+//    CGRect tmpRect = newImageView.frame;
+//    tmpRect.origin = newRect.origin;
+//    newImageView.frame = tmpRect;
 //    newRect.size = img_af.size;
 //    UIImageView *newImageView = [[UIImageView alloc] initWithFrame:newRect];
 //    newImageView.image = img_af;
-    return newImageView;
+    return self.imageView;
 
 }
 

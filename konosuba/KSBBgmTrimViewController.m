@@ -10,6 +10,7 @@
 #import "RETrimControl.h"
 #import "KSBResultViewController.h"
 #import "KSBMovieManager.h"
+#import "KSBAVAssetManager.h"
 #import <AVFoundation/AVFoundation.h>
 #import <SVProgressHUD/SVProgressHUD.h>
 
@@ -171,22 +172,26 @@
             CMTime cmTime2 = playerItem2.asset.duration;
             Float64 sec1 = CMTimeGetSeconds(cmTime1);
             Float64 sec2 = CMTimeGetSeconds(cmTime2);
-            Float64 moveTime = 0.01;
+            Float64 moveTime = 1;
             
             //動画生成条件
             KSBMovieManager *manager = [KSBMovieManager sharedInstance];
             
-            UIImageView *imgView = [[UIImageView alloc] initWithImage:manager.image];
-            CGRect d = imgView.frame;
-            d.origin.y += 200;
+            UIImageView *imgView1 = [[UIImageView alloc] initWithImage:manager.image];
+            UIImageView *imgView2 = [[UIImageView alloc] initWithImage:manager.image.copy];
+            UIImageView *imgView3 = [[UIImageView alloc] initWithImage:manager.image.copy];
+            CGRect d = imgView1.frame;
+            d.origin.y -= 360;
+            imgView2.frame = d;
             
-            KSBAnimationAction *action1 = [[KSBAnimationAction alloc] initWithImageView:imgView duration:@(sec1) destValue:[NSValue valueWithCGPoint:imgView.origin] scale:@(1)];
-//            KSBAnimationAction *action2 = [[KSBAnimationAction alloc] initWithImageView:action1.afterImageView duration:@(moveTime) destValue:[NSValue valueWithCGPoint:d.origin] scale:@(1)];
-//            KSBAnimationAction *action3 = [[KSBAnimationAction alloc] initWithImageView:action2.afterImageView duration:@(sec2) destValue:[NSValue valueWithCGPoint:d.origin] scale:@(0.5)];
+            
+            KSBAnimationAction *action1 = [[KSBAnimationAction alloc] initWithImageView:imgView1 duration:@(sec1 + 3) destValue:[NSValue valueWithCGPoint:imgView1.origin] scale:@(1)];
+            KSBAnimationAction *action2 = [[KSBAnimationAction alloc] initWithImageView:imgView1 duration:@(3) destValue:[NSValue valueWithCGPoint:d.origin] scale:@(1)];
+            KSBAnimationAction *action3 = [[KSBAnimationAction alloc] initWithImageView:imgView2 duration:@(sec2) destValue:[NSValue valueWithCGPoint:d.origin] scale:@(1)];
             
             [manager addAnimationAction:action1];
-//            [manager addAnimationAction:action2];
-//            [manager addAnimationAction:action3];
+            [manager addAnimationAction:action2];
+            [manager addAnimationAction:action3];
             
             NSLog(@"Starting make movie from image");
             [manager startMakingMovieWithFPS:30];
@@ -195,8 +200,42 @@
             [SVProgressHUD showInfoWithStatus:@"音声貼り付け中"];
             NSLog(@"音声の貼付け中");
             
-            KSBResultViewController *rvc = [[KSBResultViewController alloc] init];
-            [self.navigationController pushViewController:rvc animated:YES];
+            
+            /* -----音声ファイルの合成-------*/
+            // 音声ファイルのパス
+            NSString *fileName = @"tmpMovie";
+            NSString *destPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+            NSString *tmpMoviePath = [NSString stringWithFormat:@"%@/%@.mp4", destPath, fileName];
+            
+            KSBAVAssetManager *assetManager = [KSBAVAssetManager sharedInstance];
+            [assetManager clear];
+            
+            [assetManager addVideoAssetWithFilePath:tmpMoviePath withVolume:1.0];
+            [assetManager addAudioAssetWithFilePath:[[NSBundle mainBundle] pathForResource:fileName1 ofType:@"mp3"]
+                                      withStartTime:0
+                                       withPlayTime:sec1
+                                     withInsertTime:0
+                                         withVolume:1
+             ];
+            [assetManager addAudioAssetWithFilePath:[[NSBundle mainBundle] pathForResource:fileName2 ofType:@"mp3"]
+                                      withStartTime:0
+                                       withPlayTime:sec2
+                                     withInsertTime:(sec1 - 2)
+                                         withVolume:1
+             ];
+            
+            //
+            [assetManager merge:^(BOOL finished) {
+                if (finished) {
+                    [assetManager saveToLibrary:^(BOOL finished,NSError *error){
+                        if (finished) {
+                            [SVProgressHUD dismiss];
+                            KSBResultViewController *rvc = [[KSBResultViewController alloc] init];
+                            [self.navigationController pushViewController:rvc animated:YES];
+                        }
+                    }];
+                }
+            }];
         });
     });
 }

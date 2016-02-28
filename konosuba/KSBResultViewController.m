@@ -34,8 +34,7 @@
 - (void)config {
     
     // 動画のURLを生成
-//    NSString *fileName = @"final_video_file";
-    NSString *fileName = @"tmpMovie";
+    NSString *fileName = @"final_video_file";
     NSString *destPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     NSString *path = [NSString stringWithFormat:@"%@/%@.mp4", destPath, fileName];
     NSURL *url = [NSURL fileURLWithPath:path];
@@ -44,9 +43,9 @@
     self.player = [[AVPlayer alloc] initWithURL:url];
     
     // viewのlayerに`AVPlayer`のインスタンスをセット
+//    CGRect playerViewFrame = CGRectMake(kDefaultMargin, kStepperBottomHeight, self.view.size.width - kDefaultMargin * 2, self.view.size.height / 2.0);
     CGRect playerViewFrame = CGRectMake(kDefaultMargin, kStepperBottomHeight, self.view.size.width - kDefaultMargin * 2, self.view.size.height / 2.0);
     self.playerView = [[AVPlayerView alloc] initWithFrame:playerViewFrame];
-    [self.playerView setBackgroundColor:[UIColor redColor]];
     [(AVPlayerLayer*)self.playerView.layer setPlayer:self.player];
     [self.view addSubview:self.playerView];
     

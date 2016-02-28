@@ -41,7 +41,7 @@
     self.destPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     self.outputFileName = @"tmpMovie"; //日付名でもいいかも
     self.bgImage = [UIImage imageWithColor:[UIColor grayColor]];
-    _windowSize = CGSizeMake(480, 320); // 幅を400以上にしないと動画生成時におかしくなるので。。。
+    _windowSize = CGSizeMake(480, 360); // 幅を400以上にしないと動画生成時におかしくなるので。。。
     _actions = [NSMutableArray array];
 }
 
@@ -117,13 +117,13 @@
                 
                 // 画像拡大
                 newDs += ds;
-                CGSize sz = CGSizeMake(action.imageView.image.size.width*newDs,
-                                       action.imageView.image.size.height*newDs);
+                CGSize sz = CGSizeMake(action.imageView.size.width*newDs,
+                                       action.imageView.size.height*newDs);
                 [action.imageView.image drawInRect:CGRectMake(0, 0, sz.width, sz.height)];
                 UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
                 
                 [self.bgImage drawAtPoint:CGPointZero];
-                [newImage drawAtPoint:CGPointMake(newX, newY)];
+                [action.imageView.image drawAtPoint:CGPointMake(newX, newY)];
                 newX += dx;
                 newY += dy;
                 
@@ -135,7 +135,7 @@
                 BOOL result = NO;
                 if (adaptor.assetWriterInput.readyForMoreMediaData)
                 {
-                    CMTime frameTime = CMTimeMake(frameCount, _frameRate);
+                    CMTime frameTime = CMTimeMake(frameCount  , _frameRate);
                     result = [adaptor appendPixelBuffer:buffer withPresentationTime:frameTime];
                     
                     [NSThread sleepForTimeInterval:0.05];
