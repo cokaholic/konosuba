@@ -32,7 +32,7 @@
     [self.headerStepperView setStepWithNumber:1];
     
     backgroundImgView = [[UIImageView alloc]initWithFrame:self.view.bounds];
-    backgroundImgView.image = [UIImage imageNamed:@"top.png"];
+    backgroundImgView.image = [UIImage imageNamed:@"bg_img"];
     backgroundImgView.contentMode = UIViewContentModeScaleAspectFill;
     backgroundImgView.center = CGPointMake(self.view.bounds.size.width/2, self.view.bounds.size.height/2);
     [self.view addSubview:backgroundImgView];
